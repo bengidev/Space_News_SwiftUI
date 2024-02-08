@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B66A42C42B74D765004568DD /* OnboardingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A42C32B74D765004568DD /* OnboardingUtils.swift */; };
+		B66A42C62B74E540004568DD /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A42C52B74E540004568DD /* AppButton.swift */; };
 		B69C5A662B74C3FB00059D36 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = B69C5A652B74C3FB00059D36 /* Inject */; };
 		B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */; };
 		B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B66A42C32B74D765004568DD /* OnboardingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUtils.swift; sourceTree = "<group>"; };
+		B66A42C52B74E540004568DD /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B6D9B1482B74B8B700B1EAF6 /* Space News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_NewsApp.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		B69C5A602B74C28200059D36 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B66A42C52B74E540004568DD /* AppButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */,
+				B66A42C32B74D765004568DD /* OnboardingUtils.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +367,8 @@
 			files = (
 				B6D9B1552B74B8B900B1EAF6 /* Persistence.swift in Sources */,
 				B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */,
+				B66A42C42B74D765004568DD /* OnboardingUtils.swift in Sources */,
+				B66A42C62B74E540004568DD /* AppButton.swift in Sources */,
 				B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */,
 				B6D9B1582B74B8B900B1EAF6 /* Space_News.xcdatamodeld in Sources */,
 			);
