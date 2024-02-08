@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B69C5A662B74C3FB00059D36 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = B69C5A652B74C3FB00059D36 /* Inject */; };
 		B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */; };
 		B6D9B14E2B74B8B700B1EAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B14D2B74B8B700B1EAF6 /* ContentView.swift */; };
 		B6D9B1502B74B8B900B1EAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D9B14F2B74B8B900B1EAF6 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69C5A662B74C3FB00059D36 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +207,9 @@
 			dependencies = (
 			);
 			name = "Space News";
+			packageProductDependencies = (
+				B69C5A652B74C3FB00059D36 /* Inject */,
+			);
 			productName = "Space News";
 			productReference = B6D9B1482B74B8B700B1EAF6 /* Space News.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +282,9 @@
 				Base,
 			);
 			mainGroup = B6D9B13F2B74B8B700B1EAF6;
+			packageReferences = (
+				B69C5A642B74C3FB00059D36 /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = B6D9B1492B74B8B700B1EAF6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -682,6 +690,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B69C5A642B74C3FB00059D36 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B69C5A652B74C3FB00059D36 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B69C5A642B74C3FB00059D36 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B6D9B1562B74B8B900B1EAF6 /* Space_News.xcdatamodeld */ = {
