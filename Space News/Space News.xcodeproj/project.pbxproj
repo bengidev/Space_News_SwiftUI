@@ -75,6 +75,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B69C5A5D2B74C26D00059D36 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B69C5A5E2B74C27400059D36 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				B69C5A632B74C2AA00059D36 /* CoreData */,
+				B69C5A622B74C2A500059D36 /* API */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		B69C5A5F2B74C27B00059D36 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B6D9B14D2B74B8B700B1EAF6 /* ContentView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B69C5A602B74C28200059D36 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B69C5A612B74C29900059D36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6D9B14F2B74B8B900B1EAF6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B69C5A622B74C2A500059D36 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B69C5A632B74C2AA00059D36 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B6D9B1542B74B8B900B1EAF6 /* Persistence.swift */,
+				B6D9B1562B74B8B900B1EAF6 /* Space_News.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		B6D9B13F2B74B8B700B1EAF6 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +154,11 @@
 		B6D9B14A2B74B8B700B1EAF6 /* Space News */ = {
 			isa = PBXGroup;
 			children = (
-				B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */,
-				B6D9B14D2B74B8B700B1EAF6 /* ContentView.swift */,
-				B6D9B14F2B74B8B900B1EAF6 /* Assets.xcassets */,
-				B6D9B1542B74B8B900B1EAF6 /* Persistence.swift */,
-				B6D9B1562B74B8B900B1EAF6 /* Space_News.xcdatamodeld */,
+				B69C5A5D2B74C26D00059D36 /* Application */,
+				B69C5A5F2B74C27B00059D36 /* Features */,
+				B69C5A602B74C28200059D36 /* Utilities */,
+				B69C5A5E2B74C27400059D36 /* DataSources */,
+				B69C5A612B74C29900059D36 /* Resources */,
 				B6D9B1512B74B8B900B1EAF6 /* Preview Content */,
 			);
 			path = "Space News";
