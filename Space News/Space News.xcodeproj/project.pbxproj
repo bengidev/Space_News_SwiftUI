@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B69C5A662B74C3FB00059D36 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = B69C5A652B74C3FB00059D36 /* Inject */; };
+		B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */; };
 		B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */; };
-		B6D9B14E2B74B8B700B1EAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B14D2B74B8B700B1EAF6 /* ContentView.swift */; };
 		B6D9B1502B74B8B900B1EAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D9B14F2B74B8B900B1EAF6 /* Assets.xcassets */; };
 		B6D9B1532B74B8B900B1EAF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D9B1522B74B8B900B1EAF6 /* Preview Assets.xcassets */; };
 		B6D9B1552B74B8B900B1EAF6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B1542B74B8B900B1EAF6 /* Persistence.swift */; };
@@ -37,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B6D9B1482B74B8B700B1EAF6 /* Space News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_NewsApp.swift; sourceTree = "<group>"; };
-		B6D9B14D2B74B8B700B1EAF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6D9B14F2B74B8B900B1EAF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6D9B1522B74B8B900B1EAF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6D9B1542B74B8B900B1EAF6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		B69C5A5F2B74C27B00059D36 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B6D9B14D2B74B8B700B1EAF6 /* ContentView.swift */,
+				B6ABF5D52B74CF72008AA872 /* Onboarding */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -131,6 +131,38 @@
 				B6D9B1562B74B8B900B1EAF6 /* Space_News.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B6ABF5D52B74CF72008AA872 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B6ABF5D82B74CF95008AA872 /* Views */,
+				B6ABF5D72B74CF89008AA872 /* ViewModels */,
+				B6ABF5D62B74CF7B008AA872 /* Models */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B6ABF5D62B74CF7B008AA872 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B6ABF5D72B74CF89008AA872 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B6ABF5D82B74CF95008AA872 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B6D9B13F2B74B8B700B1EAF6 = {
@@ -328,8 +360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D9B1552B74B8B900B1EAF6 /* Persistence.swift in Sources */,
-				B6D9B14E2B74B8B700B1EAF6 /* ContentView.swift in Sources */,
 				B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */,
+				B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */,
 				B6D9B1582B74B8B900B1EAF6 /* Space_News.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

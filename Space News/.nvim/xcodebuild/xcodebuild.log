@@ -1,0 +1,13 @@
+Resolving Package Graph
+Resolved source packages
+Inject - https://github.com/krzysztofzablocki/Inject @ 1.3.0
+[Space News] Processing empty-Space\ News.plist
+Signing Space\ News.app (in target 'Space News' from project 'Space News')
+Build Succeeded
+
+-----------------------------
+-- xcodebuild.nvim summary --
+-----------------------------
+
+  ✔ Build Succeeded
+
