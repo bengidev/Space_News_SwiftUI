@@ -9,6 +9,8 @@ import Inject
 import SwiftUI
 
 struct OnboardingView: View {
+  @AppStorage("isOnboardingCompleted") private var isOnboardingCompleted: Bool = false
+
   @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
@@ -41,11 +43,14 @@ struct OnboardingView: View {
           .padding(.horizontal, 5.0)
 
         AppButton(
-          title: "Get Started",
+          title: self.isOnboardingCompleted ? "Completed" : "Get Started",
           disabled: false,
           backgroundColor: .appPrimary,
           foregroundColor: .appSecondary,
-          action: {}
+          action: {
+            withAnimation { self.isOnboardingCompleted.toggle() }
+            print("Onboarding Completed")
+          }
         )
         .frame(maxWidth: geo.size.width * 0.7)
         .position(x: geo.size.width * 0.5, y: geo.size.height * 0.95)
