@@ -26,9 +26,9 @@ struct AppButtonStyle: ButtonStyle {
           self.backgroundColor
       )
       // This is the key part, we are using both an overlay as well as cornerRadius
-      .cornerRadius(10.0)
+      .cornerRadius(15.0)
       .overlay(
-        RoundedRectangle(cornerRadius: 10.0)
+        RoundedRectangle(cornerRadius: 15.0)
           .stroke(currentForegroundColor, lineWidth: 1.0)
       )
       .padding([.top, .bottom], 10.0)
