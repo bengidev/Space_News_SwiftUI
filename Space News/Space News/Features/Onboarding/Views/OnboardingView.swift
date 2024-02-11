@@ -13,104 +13,32 @@ struct OnboardingView: View {
 
   var body: some View {
     GeometryReader { geo in
-      ZStack {
+      ZStack(alignment: .top) {
         Color.appSecondary
           .ignoresSafeArea()
           .blur(radius: 20.0)
 
-        VStack {
-          Text(OnboardingUtils.title)
-            .font(.system(.title, design: .rounded))
-            .bold()
-            .padding(.bottom, 20.0)
+        Image(.onboarding)
+          .resizable()
+          .scaledToFill()
+          .frame(maxWidth: geo.size.width * 0.98, maxHeight: geo.size.height * 0.75)
+          .clipShape(RoundedRectangle(cornerRadius: geo.size.width * 0.14))
+          .padding(.vertical, 4.0)
+          .ignoresSafeArea()
+          .shadow(radius: 10.0)
 
-          Text(OnboardingUtils.subTitle)
-            .font(.system(.footnote, design: .default))
-            .foregroundStyle(Color.gray)
-            .padding(.bottom, 30.0)
+        Text(OnboardingUtils.title)
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .font(.system(.title2, design: .rounded).bold())
+          .position(x: geo.size.width * 0.5, y: geo.size.height * 0.74)
+          .padding(.horizontal, 5.0)
 
-          VStack {
-            HStack {
-              Image(systemName: "pencil")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40.0, height: 40.0, alignment: .center)
-                .padding(.trailing, 10.0)
-
-              VStack(alignment: .leading) {
-                Text(OnboardingUtils.title)
-                  .font(.system(.headline, design: .rounded))
-                  .padding(.bottom, 3.0)
-
-                Text(OnboardingUtils.subTitle)
-                  .font(.system(.caption2, design: .default))
-                  .foregroundStyle(Color.gray)
-              }
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-              Image(systemName: "pencil")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40.0, height: 40.0, alignment: .center)
-                .padding(.trailing, 10.0)
-
-              VStack(alignment: .leading) {
-                Text(OnboardingUtils.title)
-                  .font(.system(.headline, design: .rounded))
-                  .padding(.bottom, 3.0)
-
-                Text(OnboardingUtils.subTitle)
-                  .font(.system(.caption2, design: .default))
-                  .foregroundStyle(Color.gray)
-              }
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-              Image(systemName: "pencil")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40.0, height: 40.0, alignment: .center)
-                .padding(.trailing, 10.0)
-
-              VStack(alignment: .leading) {
-                Text(OnboardingUtils.title)
-                  .font(.system(.headline, design: .rounded))
-                  .padding(.bottom, 3.0)
-
-                Text(OnboardingUtils.subTitle)
-                  .font(.system(.caption2, design: .default))
-                  .foregroundStyle(Color.gray)
-              }
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-              Image(systemName: "pencil")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40.0, height: 40.0, alignment: .center)
-                .padding(.trailing, 10.0)
-
-              VStack(alignment: .leading) {
-                Text(OnboardingUtils.title)
-                  .font(.system(.headline, design: .rounded))
-                  .padding(.bottom, 3.0)
-
-                Text(OnboardingUtils.subTitle)
-                  .font(.system(.caption2, design: .default))
-                  .foregroundStyle(Color.gray)
-              }
-            }
-            .padding(.bottom, 10.0)
-
-          }
-          .padding()
-          .background(Color.gray.opacity(0.2))
-          .clipShape(RoundedRectangle(cornerRadius: 10.0))
-        }
+        Text(OnboardingUtils.subTitle)
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .font(.system(.footnote, design: .default))
+          .foregroundStyle(Color.gray)
+          .position(x: geo.size.width * 0.5, y: geo.size.height * 0.81)
+          .padding(.horizontal, 5.0)
 
         AppButton(
           title: "Get Started",
@@ -119,6 +47,7 @@ struct OnboardingView: View {
           foregroundColor: .appSecondary,
           action: {}
         )
+        .frame(maxWidth: geo.size.width * 0.7)
         .position(x: geo.size.width * 0.5, y: geo.size.height * 0.95)
       }
 
