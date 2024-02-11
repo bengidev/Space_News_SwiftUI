@@ -9,6 +9,7 @@ Resolve Package Graph
 
 
 
+
 Resolved source packages:
   Inject: https://github.com/krzysztofzablocki/Inject @ 1.3.0
 
@@ -35,6 +36,7 @@ CreateBuildDescription
 
 Build description signature: c5ffdf06818275a26fcc6d73f8ce64d2
 Build description path: /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Intermediates.noindex/XCBuildData/c5ffdf06818275a26fcc6d73f8ce64d2.xcbuilddata
+
 
 ClangStatCache /Applications/Xcode-15.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode-15.2.0.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk /Users/beng/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator17.2-21C52-fedd24bbde943867794e2f53a1a89da6.sdkstatcache
     cd /Users/beng/Documents/iOS\ App\ Developer/Space_News_SwiftUI/Space\ News/Space\ News.xcodeproj
@@ -72,11 +74,9 @@ ProcessProductPackagingDER /Users/beng/Library/Developer/Xcode/DerivedData/Space
     cd /Users/beng/Documents/iOS\ App\ Developer/Space_News_SwiftUI/Space\ News
     /usr/bin/derq query -f xml -i /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Intermediates.noindex/Space\ News.build/Debug-iphonesimulator/Space\ News.build/Space\ News.app.xcent -o /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Intermediates.noindex/Space\ News.build/Debug-iphonesimulator/Space\ News.build/Space\ News.app.xcent.der --raw
 
-
 ProcessInfoPlistFile /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Products/Debug-iphonesimulator/Space\ News.app/Info.plist /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Intermediates.noindex/Space\ News.build/Debug-iphonesimulator/Space\ News.build/empty-Space\ News.plist (in target 'Space News' from project 'Space News')
     cd /Users/beng/Documents/iOS\ App\ Developer/Space_News_SwiftUI/Space\ News
     builtin-infoPlistUtility /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Intermediates.noindex/Space\ News.build/Debug-iphonesimulator/Space\ News.build/empty-Space\ News.plist -producttype com.apple.product-type.application -genpkginfo /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Products/Debug-iphonesimulator/Space\ News.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Intermediates.noindex/Space\ News.build/Debug-iphonesimulator/Space\ News.build/assetcatalog_generated_info.plist -o /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Products/Debug-iphonesimulator/Space\ News.app/Info.plist
-
 
 
 Ld /Users/beng/Library/Developer/Xcode/DerivedData/Space_News-gxwsdsmwuavqvtfajndbcoiytezs/Build/Products/Debug-iphonesimulator/Space\ News.app/Space\ News normal (in target 'Space News' from project 'Space News')
