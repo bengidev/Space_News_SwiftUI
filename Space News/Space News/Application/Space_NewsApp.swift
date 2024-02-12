@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct Space_NewsApp: App {
-  let persistenceController = PersistenceController.shared
+  private let persistenceController = PersistenceController.shared
 
   var body: some Scene {
     WindowGroup {
-      OnboardingView()
+      InitialView()
     }
   }
 }
