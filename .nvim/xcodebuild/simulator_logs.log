@@ -1,8 +1,8 @@
 💉 InjectionIII connected /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News.xcodeproj
 💉 Watching files under the directory /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News
 💉 💉 ⚠️ Your project file seems to be in the Desktop or Documents folder and may prevent InjectionIII working as it has special permissions.
-💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Explore/Views/ExploreView.swift
 💉 Selecting Xcode /Applications/Xcode-15.2.0.app/Contents/Developer
 💉 Loading .dylib ...
-💉 Interposed 10 function references.
-💉 Injected type #1 'Space_News.DashboardView'
+💉 Interposed 9 function references.
+💉 Injected type #1 'Space_News.ExploreView'
