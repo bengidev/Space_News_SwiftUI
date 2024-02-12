@@ -9,11 +9,13 @@ import Inject
 import SwiftUI
 
 struct HomeView: View {
+  var text: String?
+
   @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
     VStack {
-      Text("Hello, World!")
+      Text(self.text ?? "Hello, World!")
     }
     .enableInjection()
   }
