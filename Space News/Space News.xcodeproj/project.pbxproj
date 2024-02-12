@@ -19,6 +19,8 @@
 		B6D9B1622B74B8BA00B1EAF6 /* Space_NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B1612B74B8BA00B1EAF6 /* Space_NewsTests.swift */; };
 		B6D9B16C2B74B8BA00B1EAF6 /* Space_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B16B2B74B8BA00B1EAF6 /* Space_NewsUITests.swift */; };
 		B6D9B16E2B74B8BA00B1EAF6 /* Space_NewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B16D2B74B8BA00B1EAF6 /* Space_NewsUITestsLaunchTests.swift */; };
+		B6F8AEC62B78B7B300B03F16 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8AEC52B78B7B300B03F16 /* InitialView.swift */; };
+		B6F8AECC2B78B7ED00B03F16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8AECB2B78B7ED00B03F16 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B6D9B1672B74B8BA00B1EAF6 /* Space NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D9B16B2B74B8BA00B1EAF6 /* Space_NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_NewsUITests.swift; sourceTree = "<group>"; };
 		B6D9B16D2B74B8BA00B1EAF6 /* Space_NewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_NewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B6F8AEC52B78B7B300B03F16 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		B6F8AECB2B78B7ED00B03F16 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		B69C5A5F2B74C27B00059D36 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B6F8AEC72B78B7C400B03F16 /* Home */,
+				B6F8AEC12B78B78A00B03F16 /* Initial */,
 				B6ABF5D52B74CF72008AA872 /* Onboarding */,
 			);
 			path = Features;
@@ -227,6 +233,70 @@
 				B6D9B16D2B74B8BA00B1EAF6 /* Space_NewsUITestsLaunchTests.swift */,
 			);
 			path = "Space NewsUITests";
+			sourceTree = "<group>";
+		};
+		B6F8AEC12B78B78A00B03F16 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8AEC42B78B7A300B03F16 /* Views */,
+				B6F8AEC32B78B79D00B03F16 /* ViewModels */,
+				B6F8AEC22B78B79800B03F16 /* Models */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		B6F8AEC22B78B79800B03F16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B6F8AEC32B78B79D00B03F16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B6F8AEC42B78B7A300B03F16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8AEC52B78B7B300B03F16 /* InitialView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6F8AEC72B78B7C400B03F16 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8AECA2B78B7E200B03F16 /* Views */,
+				B6F8AEC92B78B7DA00B03F16 /* ViewModels */,
+				B6F8AEC82B78B7D300B03F16 /* Models */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B6F8AEC82B78B7D300B03F16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B6F8AEC92B78B7DA00B03F16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B6F8AECA2B78B7E200B03F16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8AECB2B78B7ED00B03F16 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +440,8 @@
 				B66A42C42B74D765004568DD /* OnboardingUtils.swift in Sources */,
 				B66A42C62B74E540004568DD /* AppButton.swift in Sources */,
 				B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */,
+				B6F8AECC2B78B7ED00B03F16 /* HomeView.swift in Sources */,
+				B6F8AEC62B78B7B300B03F16 /* InitialView.swift in Sources */,
 				B6D9B1582B74B8B900B1EAF6 /* Space_News.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

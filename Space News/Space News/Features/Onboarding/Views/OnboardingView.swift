@@ -48,8 +48,7 @@ struct OnboardingView: View {
           backgroundColor: .appPrimary,
           foregroundColor: .appSecondary,
           action: {
-            withAnimation { self.isOnboardingCompleted.toggle() }
-            print("Onboarding Completed")
+            withAnimation { self.isOnboardingCompleted = true }
           }
         )
         .frame(maxWidth: geo.size.width * 0.7)
