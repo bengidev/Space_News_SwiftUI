@@ -27,7 +27,7 @@ struct DashboardView: View {
       }
 
       HStack(spacing: 0) {
-        AppTabItemView(
+        AppTabViewItem(
           tabItemName: "Home",
           tabItemImage: "house.fill",
           selectedTabItem: self.selectedTabItem,
@@ -38,7 +38,7 @@ struct DashboardView: View {
 
         Spacer(minLength: 0)
 
-        AppTabItemView(
+        AppTabViewItem(
           tabItemName: "Explore",
           tabItemImage: "map.fill",
           selectedTabItem: self.selectedTabItem,
@@ -49,7 +49,7 @@ struct DashboardView: View {
 
         Spacer(minLength: 0)
 
-        AppTabItemView(
+        AppTabViewItem(
           tabItemName: "Favorites",
           tabItemImage: "star.fill",
           selectedTabItem: self.selectedTabItem,
@@ -60,7 +60,7 @@ struct DashboardView: View {
 
         Spacer(minLength: 0)
 
-        AppTabItemView(
+        AppTabViewItem(
           tabItemName: "Account",
           tabItemImage: "person.fill",
           selectedTabItem: self.selectedTabItem,
