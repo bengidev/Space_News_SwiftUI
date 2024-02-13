@@ -10,6 +10,7 @@
 		B602968F2B7A13580039B86A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B602968E2B7A13580039B86A /* DashboardView.swift */; };
 		B60296912B7A15340039B86A /* AppTabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60296902B7A15340039B86A /* AppTabViewItem.swift */; };
 		B64DB4D52B7A20C60006660D /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DB4D42B7A20C60006660D /* ExploreView.swift */; };
+		B65522D32B7B80F800E10DFD /* CustomCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65522D22B7B80F800E10DFD /* CustomCarousel.swift */; };
 		B66A42C42B74D765004568DD /* OnboardingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A42C32B74D765004568DD /* OnboardingUtils.swift */; };
 		B66A42C62B74E540004568DD /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A42C52B74E540004568DD /* AppButton.swift */; };
 		B68EACE02B7A1C3000F30CAE /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EACDF2B7A1C3000F30CAE /* AccountView.swift */; };
@@ -50,6 +51,7 @@
 		B602968E2B7A13580039B86A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		B60296902B7A15340039B86A /* AppTabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewItem.swift; sourceTree = "<group>"; };
 		B64DB4D42B7A20C60006660D /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		B65522D22B7B80F800E10DFD /* CustomCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCarousel.swift; sourceTree = "<group>"; };
 		B66A42C32B74D765004568DD /* OnboardingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUtils.swift; sourceTree = "<group>"; };
 		B66A42C52B74E540004568DD /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		B68EACDF2B7A1C3000F30CAE /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				B66A42C52B74E540004568DD /* AppButton.swift */,
 				B60296902B7A15340039B86A /* AppTabViewItem.swift */,
+				B65522D22B7B80F800E10DFD /* CustomCarousel.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				B60296912B7A15340039B86A /* AppTabViewItem.swift in Sources */,
 				B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */,
 				B6F8AECC2B78B7ED00B03F16 /* HomeView.swift in Sources */,
+				B65522D32B7B80F800E10DFD /* CustomCarousel.swift in Sources */,
 				B6F8AEC62B78B7B300B03F16 /* InitialView.swift in Sources */,
 				B6E1EBF82B7B7CC2008A69DD /* NewsCategory.swift in Sources */,
 				B6D9B1582B74B8B900B1EAF6 /* Space_News.xcdatamodeld in Sources */,
