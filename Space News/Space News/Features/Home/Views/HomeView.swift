@@ -14,6 +14,7 @@ struct HomeView: View {
   @State private var searchText: String = ""
   @State private var tabs: [String] = ["Nature", "Animals", "Fish", "Flowers", "Cities", "Cars", "Planes"]
   @State private var selectedTab: Int = 0
+  @State private var selectedCarousel: Int = 0
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -60,6 +61,20 @@ struct HomeView: View {
         .padding(.horizontal)
       }
       .padding(.top, 10.0)
+
+      CustomCarousel(
+        index: self.$selectedCarousel,
+        items: self.tabs,
+        spacing: 10.0,
+        cardPadding: 90.0,
+        id: \.self
+      ) { _, _ in
+        ZStack {
+          RoundedRectangle(cornerRadius: 30.0, style: .continuous)
+        }
+        .frame(height: 380.0)
+        .padding(.horizontal, 10.0)
+      }
     }
     .enableInjection()
   }
