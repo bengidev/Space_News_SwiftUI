@@ -1,5 +1,5 @@
 //
-//  AppTabItemView.swift
+//  AppTabViewItem.swift
 //  Space News
 //
 //  Created by Bambang Tri Rahmat Doni on 12/02/24.
@@ -15,7 +15,7 @@ enum AppTabCategory: String, CaseIterable {
   case account
 }
 
-struct AppTabItemView: View {
+struct AppTabViewItem: View {
   var tabItemName: String?
   var tabItemImage: String?
   let selectedTabItem: AppTabCategory
@@ -55,5 +55,5 @@ struct AppTabItemView: View {
 }
 
 #Preview {
-  AppTabItemView(selectedTabItem: .home, tabItemTag: .home)
+  AppTabViewItem(selectedTabItem: .home, tabItemTag: .home)
 }
