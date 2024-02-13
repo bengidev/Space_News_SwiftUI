@@ -16,7 +16,7 @@ struct DashboardView: View {
   var body: some View {
     VStack(spacing: 0) {
       TabView(selection: self.$selectedTabItem) {
-        HomeView(text: self.selectedTabItem.rawValue)
+        HomeView()
           .tag(AppTabCategory.home)
         ExploreView()
           .tag(AppTabCategory.explore)
@@ -72,6 +72,7 @@ struct DashboardView: View {
       .padding(.horizontal)
       .background(Color.clear)
     }
+    .ignoresSafeArea(.keyboard, edges: .bottom)
     .enableInjection()
   }
 }
