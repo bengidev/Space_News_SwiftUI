@@ -32,9 +32,9 @@ struct NewsCategory: View {
               Color.gray
           )
 
-        Circle()
+        RoundedRectangle(cornerRadius: 10.0)
           .fill()
-          .frame(maxWidth: 10.0, maxHeight: 10.0)
+          .frame(maxWidth: .infinity, maxHeight: 5.0)
           .opacity(self.selectedIndex == self.menuIndex ? 1 : 0)
       }
     })

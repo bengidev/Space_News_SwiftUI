@@ -1,19 +1,17 @@
 💉 InjectionIII connected /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News.xcodeproj
 💉 Watching files under the directory /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News
 💉 💉 ⚠️ Your project file seems to be in the Desktop or Documents folder and may prevent InjectionIII working as it has special permissions.
-💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Utilities/CustomCarousel.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
 💉 Selecting Xcode /Applications/Xcode-15.2.0.app/Contents/Developer
 💉 Loading .dylib ...
-💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
-💉 Interposed 14 function references.
-💉 Loading .dylib ...
 💉 Interposed 7 function references.
 💉 Injected type #1 'Space_News.HomeView'
-💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
-💉 Loading .dylib ...
-💉 Interposed 7 function references.
-💉 Injected type #1 'Space_News.HomeView'
-💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
-💉 Loading .dylib ...
-💉 Interposed 7 function references.
-💉 Injected type #1 'Space_News.HomeView'
+2024-02-14 18:43:32.437 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:35.684 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:38.010 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:40.462 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:43.112 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:46.376 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:56.671 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:43:58.527 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
+2024-02-14 18:44:01.244 Space News[71817:607218] changing items while animating can result in a corrupted navigation bar
