@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct DetailView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+  @Environment(\.isPresented) private var isPresented
 
-#Preview {
-    DetailView()
+  var body: some View {
+    ZStack {
+      Color.appSecondary.ignoresSafeArea()
+    }
+    .onChange(of: self.isPresented) { isPresented in
+      if !isPresented {
+        DispatchQueue.main
+          .asyncAfter(deadline: .now() + 0.05) { showTabBar() }
+      }
+    }
+  }
 }
