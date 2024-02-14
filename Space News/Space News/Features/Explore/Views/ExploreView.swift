@@ -12,8 +12,8 @@ struct ExploreView: View {
   @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
-    VStack {
-      Text(/*@START_MENU_TOKEN@*/"Hello, Explore!"/*@END_MENU_TOKEN@*/)
+    ZStack {
+      Color.green.ignoresSafeArea()
     }
     .enableInjection()
   }
