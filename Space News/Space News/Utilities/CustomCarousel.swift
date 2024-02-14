@@ -95,8 +95,13 @@ struct CustomCarousel<Content: View, Item, ID>: View where Item: RandomAccessCol
 
     self.index = -self.currentIndex
     withAnimation(.interactiveSpring(response: 0.4, dampingFraction: 1.0, blendDuration: 1.0)) {
-      let extraSpace = self.index == 0 ? 0 : (self.cardPadding / 2)
-      self.offset = (cardWidth * _index) + extraSpace
+      if self.index == self.items.count - 1 {
+        let extraSpace = self.index == 0 ? 0 : (self.cardPadding / 2)
+        self.offset = (cardWidth * _index) + (extraSpace * 2)
+      } else {
+        let extraSpace = self.index == 0 ? 0 : (self.cardPadding / 2)
+        self.offset = (cardWidth * _index) + extraSpace
+      }
     }
 
     self.lastStoredOffset = self.offset
