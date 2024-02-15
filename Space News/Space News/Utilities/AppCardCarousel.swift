@@ -1,5 +1,5 @@
 //
-//  CustomCarousel.swift
+//  AppCardCarousel.swift
 //  Space News
 //
 //  Created by Bambang Tri Rahmat Doni on 13/02/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomCarousel<Content: View, Item, ID>: View where Item: RandomAccessCollection, ID: Hashable,
+struct AppCardCarousel<Content: View, Item, ID>: View where Item: RandomAccessCollection, ID: Hashable,
   Item.Element: Equatable
 {
   var content: (Item.Element, CGSize) -> Content
