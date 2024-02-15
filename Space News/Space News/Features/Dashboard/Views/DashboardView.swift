@@ -16,8 +16,13 @@ struct DashboardView: View {
 
   @ObservedObject private var injectObserver = Inject.observer
 
+  init() {
+    // MARK: For hiding native Tab Bar
 
-        Spacer(minLength: 0)
+    // As for XCode 14.1 Beta .toolbar(.hidden) is broken for native SwiftUI TabView
+    //
+    UITabBar.appearance().isHidden = true
+  }
 
   var body: some View {
     NavigationView {
