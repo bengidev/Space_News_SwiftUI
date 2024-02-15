@@ -1,5 +1,5 @@
 //
-//  AppTabViewItem.swift
+//  AppFlatTabViewItem.swift
 //  Space News
 //
 //  Created by Bambang Tri Rahmat Doni on 12/02/24.
@@ -8,19 +8,12 @@
 import Inject
 import SwiftUI
 
-enum AppTabCategory: String, CaseIterable {
-  case home
-  case explore
-  case favorites
-  case account
-}
-
-struct AppTabViewItem: View {
+struct AppFlatTabViewItem: View {
   var tabItemName: String?
   var tabItemImage: String?
-  let selectedTabItem: AppTabCategory
-  let tabItemTag: AppTabCategory
-  var tabItemHandler: ((AppTabCategory) -> Void)?
+  let selectedTabItem: AppTabViewCategory
+  let tabItemTag: AppTabViewCategory
+  var tabItemHandler: ((AppTabViewCategory) -> Void)?
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -52,8 +45,4 @@ struct AppTabViewItem: View {
     .buttonStyle(.plain)
     .enableInjection()
   }
-}
-
-#Preview {
-  AppTabViewItem(selectedTabItem: .home, tabItemTag: .home)
 }
