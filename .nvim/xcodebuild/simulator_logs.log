@@ -6,7 +6,118 @@
 💉 Loading .dylib ...
 💉 Interposed 2 function references.
 💉 Injected type #1 'Space_News.DashboardView'
-💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
 💉 Loading .dylib ...
 💉 Interposed 2 function references.
-💉 Injected type #1 'Space_News.HomeView'
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 ⚠️ Re-compilation failed (see: /Users/beng/Library/Developer/CoreSimulator/Devices/9008A034-3255-4387-BAC6-2DF310780AF9/data/Containers/Data/Application/3C501B2F-1060-492C-A7F5-580A948ECC6A/tmp/command.sh)
+/Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift:59:49: error: result values in '? :' expression have mismatching types 'Circle' and 'EmptyView'
+                  self.selectedTabItem == tab ? Circle() : EmptyView()
+                                                ^~~~~~~~
+
+💉 ⚠️ Recompilation failing, are you renaming/adding files? Build your project to generate a new Xcode build log and try injecting again or relauch your app.
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 ⚠️ Re-compilation failed (see: /Users/beng/Library/Developer/CoreSimulator/Devices/9008A034-3255-4387-BAC6-2DF310780AF9/data/Containers/Data/Application/3C501B2F-1060-492C-A7F5-580A948ECC6A/tmp/command.sh)
+/Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift:53:18: error: type '() -> Color' cannot conform to 'ShapeStyle'
+                .foregroundStyle {
+                 ^
+/Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift:53:18: note: only concrete types such as structs, enums and classes can conform to protocols
+                .foregroundStyle {
+                 ^
+/Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift:53:18: note: required by instance method 'foregroundStyle' where 'S' = '() -> Color'
+                .foregroundStyle {
+                 ^
+
+💉 ⚠️ Recompilation failing, are you renaming/adding files? Build your project to generate a new Xcode build log and try injecting again or relauch your app.
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+2024-02-17 17:15:01.481 Space News[85388:214879] changing items while animating can result in a corrupted navigation bar
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
