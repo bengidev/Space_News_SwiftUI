@@ -71,17 +71,19 @@ struct DashboardView: View {
           }
         }
         .offset(y: self.isShowingTabBar ? 0 : 150.0)
-        .background(content: {
-          AppTabViewCorner(corners: [.topLeft, .topRight], radius: 20.0)
-            .fill(Color.appPrimary)
-            .ignoresSafeArea()
-        })
+        .background {
+          if self.isShowingTabBar {
+            AppTabViewCorner(corners: [.topLeft, .topRight], radius: 20.0)
+              .fill(Color.appPrimary)
+              .ignoresSafeArea()
+          }
+        }
         .animation(
-          .interactiveSpring(response: 0.5, dampingFraction: 0.65, blendDuration: 0.65),
+          .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
           value: self.selectedTabItem
         )
         .animation(
-          .interactiveSpring(response: 0.5, dampingFraction: 0.65, blendDuration: 0.65),
+          .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
           value: self.isShowingTabBar
         )
       }
