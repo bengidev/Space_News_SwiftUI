@@ -54,7 +54,7 @@ struct HomeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 30.0) {
             ForEach(0 ..< self.tabs.count, id: \.self) { tab in
-              NewsCategory(menus: self.tabs, menuIndex: tab, selectedIndex: self.$selectedTab) {
+              HomeNewsCategory(menus: self.tabs, menuIndex: tab, selectedIndex: self.$selectedTab) {
                 withAnimation {
                   self.selectedTab = tab
                 }
@@ -90,15 +90,27 @@ struct HomeView: View {
               self.currentDetailNews = carousel
               self.showDetailView = true
             }
-
           }
         }
-        .frame(height: 250.0)
+        .frame(height: 200.0)
       }
       NavigationLink(
-        destination: DetailView(),
+        destination: HomeNewsDetail(),
         isActive: self.$showDetailView,
         label: {}
+      )
+
+      HStack {
+        ForEach(0 ..< self.tabs.count, id: \.self) { carousel in
+          Circle()
+            .foregroundStyle(self.selectedCarousel == carousel ? Color.appPrimary : Color.gray.opacity(0.3))
+        }
+      }
+      .frame(maxWidth: 120.0, maxHeight: 120.0)
+      .padding(.top, 12.0)
+      .animation(
+        .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
+        value: self.selectedCarousel
       )
     }
     .background(Color.appSecondary)
