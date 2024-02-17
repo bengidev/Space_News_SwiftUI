@@ -9,16 +9,18 @@ import Inject
 import SwiftUI
 
 struct HomeView: View {
-  @Environment(\.colorScheme) private var colorScheme
-
   @State private var searchText: String = ""
   @State private var tabs: [String] = ["Nature", "Animals", "Fish", "Flowers", "Cities", "Cars", "Planes"]
   @State private var selectedTab: Int = 0
   @State private var selectedCarousel: Int = 0
   @State private var showDetailView: Bool = false
   @State private var currentDetailNews: String = ""
+  @State private var offset: CGFloat = 0
+  @State private var lastOffset: CGFloat = 0
 
   @Namespace private var animation
+
+  @Environment(\.colorScheme) private var colorScheme
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -130,8 +132,40 @@ struct HomeView: View {
         }
       }
       .padding(.bottom, 60.0)
+      .overlay {
+        GeometryReader { proxy -> Color in
+          let minY = proxy.frame(in: .named("HomeViewScroll")).minY
+          let limitOffset: CGFloat = 400.0
+          let durationOffset: CGFloat = 35.0
+
+          DispatchQueue.main.async {
+            if minY < self.offset {
+              if self.offset < limitOffset, -minY > (self.lastOffset + durationOffset) {
+                withAnimation(.easeInOut.speed(1.5)) {
+                  NotificationCenter.default.post(name: .init("HIDE_TAB_BAR"), object: nil, userInfo: nil)
+                }
+
+                self.lastOffset = -self.offset
+              }
+            }
+
+            if minY > self.offset, -minY < (self.lastOffset - durationOffset) {
+              withAnimation(.easeInOut.speed(1.5)) {
+                NotificationCenter.default.post(name: .init("SHOW_TAB_BAR"), object: nil, userInfo: nil)
+              }
+
+              self.lastOffset = -self.offset
+            }
+
+            self.offset = minY
+          }
+
+          return Color.clear
+        }
+      }
     }
     .background(Color.appSecondary)
+    .coordinateSpace(name: "HomeViewScroll")
     .enableInjection()
   }
 }
