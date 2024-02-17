@@ -102,11 +102,11 @@ struct HomeView: View {
 
       HStack {
         ForEach(0 ..< self.tabs.count, id: \.self) { carousel in
-          Circle()
+          RoundedRectangle(cornerRadius: 5.0)
             .foregroundStyle(self.selectedCarousel == carousel ? Color.appPrimary : Color.gray.opacity(0.3))
+            .frame(width: self.selectedCarousel == carousel ? 20.0 : 10.0)
         }
       }
-      .frame(maxWidth: 120.0, maxHeight: 120.0)
       .padding(.top, 12.0)
       .animation(
         .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
