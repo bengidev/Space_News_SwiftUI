@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  HomeNewsDetail.swift
 //  Space News
 //
 //  Created by Bambang Tri Rahmat Doni on 14/02/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct HomeNewsDetail: View {
   @Environment(\.isPresented) private var isPresented
 
   var body: some View {
@@ -17,7 +17,7 @@ struct DetailView: View {
     .onChange(of: self.isPresented) { isPresented in
       if !isPresented {
         DispatchQueue.main
-          .asyncAfter(deadline: .now() + 0.05) { showTabBar() }
+          .asyncAfter(deadline: .now() + 0.05) {}
       }
     }
   }
