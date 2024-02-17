@@ -52,13 +52,13 @@ struct DashboardView: View {
                 .frame(width: 20.0, height: 20.0)
                 .foregroundStyle(
                   self.selectedTabItem == tab ?
-                    Color.white :
+                    Color.appPrimary :
                     Color.gray
                 )
                 .background(content: {
                   if self.selectedTabItem == tab {
                     RoundedRectangle(cornerRadius: 5.0)
-                      .fill(Color.appPrimary)
+                      .fill(Color.appSecondary)
                       .scaleEffect(2.5)
                       .shadow(color: Color.black.opacity(0.3), radius: 10.0, x: 5.0, y: 10.0)
                       .matchedGeometryEffect(id: "DashboardView", in: self.animation)
@@ -73,7 +73,7 @@ struct DashboardView: View {
         .offset(y: self.isShowingTabBar ? 0 : 150.0)
         .background(content: {
           AppTabViewCorner(corners: [.topLeft, .topRight], radius: 20.0)
-            .fill(Color.gray.opacity(0.3))
+            .fill(Color.appPrimary)
             .ignoresSafeArea()
         })
         .animation(
