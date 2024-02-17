@@ -1,5 +1,5 @@
 //
-//  NewsCategory.swift
+//  HomeNewsCategory.swift
 //  Space News
 //
 //  Created by Bambang Tri Rahmat Doni on 13/02/24.
@@ -8,7 +8,7 @@
 import Inject
 import SwiftUI
 
-struct NewsCategory: View {
+struct HomeNewsCategory: View {
   var menus: [String]
   var menuIndex: Int
   @Binding var selectedIndex: Int
