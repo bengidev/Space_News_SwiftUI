@@ -94,3 +94,69 @@
 💉 Loading .dylib ...
 💉 Interposed 2 function references.
 💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 ⚠️ Re-compilation failed (see: /Users/beng/Library/Developer/CoreSimulator/Devices/9008A034-3255-4387-BAC6-2DF310780AF9/data/Containers/Data/Application/DF885C5D-B9D8-49AA-8DB6-9CF536A3C6FE/tmp/command.sh)
+/Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift:124:34: error: argument 'alignment' must precede argument 'spacing'
+          LazyVStack(spacing: 0, alignment: .leading) {
+                     ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+                     alignment: .leading,  
+
+💉 ⚠️ Recompilation failing, are you renaming/adding files? Build your project to generate a new Xcode build log and try injecting again or relauch your app.
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Dashboard/Views/DashboardView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.DashboardView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'

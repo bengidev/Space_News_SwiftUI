@@ -65,7 +65,7 @@ struct HomeView: View {
         }
         .padding(.top, 10.0)
 
-        Text("Highlights")
+        Text("Trending News")
           .font(.system(.subheadline, design: .rounded).bold())
           .frame(maxWidth: .infinity, alignment: .leading)
           .padding(.horizontal, 5.0)
@@ -112,6 +112,24 @@ struct HomeView: View {
         .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
         value: self.selectedCarousel
       )
+
+      Text("Highlights")
+        .font(.system(.subheadline, design: .rounded).bold())
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 5.0)
+        .padding(.vertical, 10.0)
+
+      VStack(spacing: 0) {
+        ForEach(0 ..< 50, id: \.self) { index in
+          LazyVStack(spacing: 0) {
+            Text("News: \(index)")
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .background(content: { Color.red })
+              .padding(5.0)
+          }
+        }
+      }
+      .padding(.bottom, 60.0)
     }
     .background(Color.appSecondary)
     .enableInjection()
