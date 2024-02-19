@@ -17,6 +17,7 @@ struct HomeView: View {
   @State private var currentDetailNews: String = ""
   @State private var offset: CGFloat = 0
   @State private var lastOffset: CGFloat = 0
+  @State private var selectedPage: Int = 1
 
   @Namespace private var animation
 
@@ -122,7 +123,7 @@ struct HomeView: View {
         .padding(.vertical, 10.0)
 
       VStack(spacing: 0) {
-        ForEach(0 ..< 50, id: \.self) { index in
+        ForEach(0 ..< 20, id: \.self) { index in
           LazyVStack(spacing: 0) {
             Text("News: \(index)")
               .frame(maxWidth: .infinity, alignment: .leading)
@@ -131,40 +132,42 @@ struct HomeView: View {
           }
         }
       }
-      .padding(.bottom, 60.0)
-      .overlay {
-        GeometryReader { proxy -> Color in
-          let minY = proxy.frame(in: .named("HomeViewScroll")).minY
-          let limitOffset: CGFloat = 400.0
-          let durationOffset: CGFloat = 35.0
 
-          DispatchQueue.main.async {
-            if minY < self.offset {
-              if self.offset < limitOffset, -minY > (self.lastOffset + durationOffset) {
-                withAnimation(.easeInOut.speed(1.5)) {
-                  NotificationCenter.default.post(name: .init("HIDE_TAB_BAR"), object: nil, userInfo: nil)
-                }
+      AppPagination(currentPage: self.$selectedPage, totalPages: 50)
+        .padding(.bottom, 60.0)
+    }
+    .background(Color.appSecondary)
+    .overlay {
+      GeometryReader { proxy -> Color in
+        let minY = proxy.frame(in: .named("HomeViewScroll")).minY
+        let limitOffset: CGFloat = 400.0
+        let durationOffset: CGFloat = 35.0
 
-                self.lastOffset = -self.offset
-              }
-            }
-
-            if minY > self.offset, -minY < (self.lastOffset - durationOffset) {
+        DispatchQueue.main.async {
+          if minY < self.offset {
+            if self.offset < limitOffset, -minY > (self.lastOffset + durationOffset) {
               withAnimation(.easeInOut.speed(1.5)) {
-                NotificationCenter.default.post(name: .init("SHOW_TAB_BAR"), object: nil, userInfo: nil)
+                NotificationCenter.default.post(name: .init("HIDE_TAB_BAR"), object: nil, userInfo: nil)
               }
 
               self.lastOffset = -self.offset
             }
-
-            self.offset = minY
           }
 
-          return Color.clear
+          if minY > self.offset, -minY < (self.lastOffset - durationOffset) {
+            withAnimation(.easeInOut.speed(1.5)) {
+              NotificationCenter.default.post(name: .init("SHOW_TAB_BAR"), object: nil, userInfo: nil)
+            }
+
+            self.lastOffset = -self.offset
+          }
+
+          self.offset = minY
         }
+
+        return Color.clear
       }
     }
-    .background(Color.appSecondary)
     .coordinateSpace(name: "HomeViewScroll")
     .enableInjection()
   }
