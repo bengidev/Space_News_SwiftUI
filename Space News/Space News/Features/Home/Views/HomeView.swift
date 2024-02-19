@@ -120,7 +120,7 @@ struct HomeView: View {
         .font(.system(.subheadline, design: .rounded).bold())
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 5.0)
-        .padding(.vertical, 10.0)
+        .padding(.top, 5.0)
 
       ForEach(0 ..< 10, id: \.self) { _ in
         LazyVStack(spacing: 0) {
@@ -156,7 +156,8 @@ struct HomeView: View {
               }
               .font(.system(.footnote, design: .rounded))
               .foregroundStyle(Color.gray)
-              .padding(5.0)
+              .padding(.vertical, 5.0)
+              .padding(.horizontal, 10.0)
             }
             .frame(height: 200.0)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -165,8 +166,9 @@ struct HomeView: View {
             .padding(.vertical, 3.0)
             .padding(.horizontal, 5.0)
           }
+          .buttonStyle(.plain)
         }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 5.0)
       }
 
       AppPagination(currentPage: self.$selectedPage, totalPages: 50)
