@@ -10,6 +10,7 @@
 		B60296912B7A15340039B86A /* AppFlatTabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60296902B7A15340039B86A /* AppFlatTabViewItem.swift */; };
 		B60D7C712B7CBCB900567808 /* HomeNewsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */; };
 		B64DB4D52B7A20C60006660D /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DB4D42B7A20C60006660D /* ExploreView.swift */; };
+		B6501BE72B834D3700FBB5A6 /* AppPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6501BE62B834D3700FBB5A6 /* AppPagination.swift */; };
 		B65522D32B7B80F800E10DFD /* AppCardCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65522D22B7B80F800E10DFD /* AppCardCarousel.swift */; };
 		B65C32ED2B7E08F300496DC8 /* AppTabViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65C32EC2B7E08F300496DC8 /* AppTabViewCorner.swift */; };
 		B662240F2B7DFDC50081D366 /* AppCircleTabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662240E2B7DFDC50081D366 /* AppCircleTabViewItem.swift */; };
@@ -56,6 +57,7 @@
 		B60296902B7A15340039B86A /* AppFlatTabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlatTabViewItem.swift; sourceTree = "<group>"; };
 		B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsDetail.swift; sourceTree = "<group>"; };
 		B64DB4D42B7A20C60006660D /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		B6501BE62B834D3700FBB5A6 /* AppPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPagination.swift; sourceTree = "<group>"; };
 		B65522D22B7B80F800E10DFD /* AppCardCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCardCarousel.swift; sourceTree = "<group>"; };
 		B65C32EC2B7E08F300496DC8 /* AppTabViewCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewCorner.swift; sourceTree = "<group>"; };
 		B662240E2B7DFDC50081D366 /* AppCircleTabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCircleTabViewItem.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				B66224122B7DFE5A0081D366 /* AppTabViewCategory.swift */,
 				B65C32EC2B7E08F300496DC8 /* AppTabViewCorner.swift */,
 				B67257662B7E14CA00EC12AE /* AppTabBarUtils.swift */,
+				B6501BE62B834D3700FBB5A6 /* AppPagination.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				B6F8AEC62B78B7B300B03F16 /* InitialView.swift in Sources */,
 				B6E1EBF82B7B7CC2008A69DD /* HomeNewsCategory.swift in Sources */,
 				B66224132B7DFE5A0081D366 /* AppTabViewCategory.swift in Sources */,
+				B6501BE72B834D3700FBB5A6 /* AppPagination.swift in Sources */,
 				B6D1D9A02B80AE99006302FA /* DashboardView.swift in Sources */,
 				B6D9B1582B74B8B900B1EAF6 /* Space_News.xcdatamodeld in Sources */,
 				B65C32ED2B7E08F300496DC8 /* AppTabViewCorner.swift in Sources */,
