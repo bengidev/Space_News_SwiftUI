@@ -136,7 +136,6 @@ struct HomeView: View {
       AppPagination(currentPage: self.$selectedPage, totalPages: 50)
         .padding(.bottom, 60.0)
     }
-    .background(Color.appSecondary)
     .overlay {
       GeometryReader { proxy -> Color in
         let minY = proxy.frame(in: .named("HomeViewScroll")).minY
@@ -168,6 +167,8 @@ struct HomeView: View {
         return Color.clear
       }
     }
+    .clipped()
+    .background(Color.appSecondary)
     .coordinateSpace(name: "HomeViewScroll")
     .enableInjection()
   }
