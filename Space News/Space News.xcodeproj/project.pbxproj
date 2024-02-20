@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B60296912B7A15340039B86A /* AppFlatTabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60296902B7A15340039B86A /* AppFlatTabViewItem.swift */; };
 		B60D7C712B7CBCB900567808 /* HomeNewsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */; };
+		B64080B02B84C9E200087039 /* HomeGreetingTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64080AF2B84C9E200087039 /* HomeGreetingTheme.swift */; };
 		B64DB4D52B7A20C60006660D /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DB4D42B7A20C60006660D /* ExploreView.swift */; };
 		B6501BE72B834D3700FBB5A6 /* AppPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6501BE62B834D3700FBB5A6 /* AppPagination.swift */; };
 		B65522D32B7B80F800E10DFD /* AppCardCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65522D22B7B80F800E10DFD /* AppCardCarousel.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		B60296902B7A15340039B86A /* AppFlatTabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlatTabViewItem.swift; sourceTree = "<group>"; };
 		B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsDetail.swift; sourceTree = "<group>"; };
+		B64080AF2B84C9E200087039 /* HomeGreetingTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGreetingTheme.swift; sourceTree = "<group>"; };
 		B64DB4D42B7A20C60006660D /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		B6501BE62B834D3700FBB5A6 /* AppPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPagination.swift; sourceTree = "<group>"; };
 		B65522D22B7B80F800E10DFD /* AppCardCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCardCarousel.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				B6F8AECB2B78B7ED00B03F16 /* HomeView.swift */,
 				B6E1EBF72B7B7CC2008A69DD /* HomeNewsCategory.swift */,
 				B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */,
+				B64080AF2B84C9E200087039 /* HomeGreetingTheme.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -476,6 +479,8 @@
 				B6D9B1442B74B8B700B1EAF6 /* Sources */,
 				B6D9B1452B74B8B700B1EAF6 /* Frameworks */,
 				B6D9B1462B74B8B700B1EAF6 /* Resources */,
+				B64080B12B84CAB600087039 /* Swift Lint */,
+				B64080B22B84CD6C00087039 /* Swift Format */,
 			);
 			buildRules = (
 			);
@@ -597,6 +602,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B64080B12B84CAB600087039 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		B64080B22B84CD6C00087039 /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftformat > /dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B6D9B1442B74B8B700B1EAF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -609,6 +655,7 @@
 				B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */,
 				B66A42C42B74D765004568DD /* OnboardingUtils.swift in Sources */,
 				B66A42C62B74E540004568DD /* AppButton.swift in Sources */,
+				B64080B02B84C9E200087039 /* HomeGreetingTheme.swift in Sources */,
 				B64DB4D52B7A20C60006660D /* ExploreView.swift in Sources */,
 				B60296912B7A15340039B86A /* AppFlatTabViewItem.swift in Sources */,
 				B60D7C712B7CBCB900567808 /* HomeNewsDetail.swift in Sources */,
