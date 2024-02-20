@@ -1,11 +1,6 @@
 💉 InjectionIII connected /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News.xcodeproj
 💉 Watching files under the directory /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News
 💉 💉 ⚠️ Your project file seems to be in the Desktop or Documents folder and may prevent InjectionIII working as it has special permissions.
-Tester
-Tester
-Tester
-Tester
-2024-02-19 19:23:26.142 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
 💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
 💉 Selecting Xcode /Applications/Xcode-15.2.0.app/Contents/Developer
 💉 Loading .dylib ...
@@ -23,8 +18,6 @@ Tester
 💉 Loading .dylib ...
 💉 Interposed 2 function references.
 💉 Injected type #1 'Space_News.HomeView'
-2024-02-19 19:26:34.161 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
-2024-02-19 19:26:35.944 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
 💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
 💉 Loading .dylib ...
 💉 Interposed 2 function references.
@@ -53,7 +46,8 @@ Tester
 💉 Loading .dylib ...
 💉 Interposed 2 function references.
 💉 Injected type #1 'Space_News.HomeView'
-2024-02-19 19:38:50.685 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
-2024-02-19 19:38:52.029 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
-2024-02-19 19:39:09.493 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
-2024-02-19 19:39:11.986 Space News[20316:432848] changing items while animating can result in a corrupted navigation bar
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
+💉 Loading .dylib ...
+💉 Interposed 2 function references.
+💉 Injected type #1 'Space_News.HomeView'
+💉 Compiling /Users/beng/Documents/iOS App Developer/Space_News_SwiftUI/Space News/Space News/Features/Home/Views/HomeView.swift
