@@ -9,11 +9,13 @@ import Inject
 import SwiftUI
 
 struct HomeView: View {
+  @State private var appUtilities: AppUtilities = .shared
+
   @State private var searchText: String = ""
   @State private var tabs: [String] = ["Nature", "Animals", "Fish", "Flowers", "Cities", "Cars", "Planes"]
   @State private var selectedTab: Int = 0
   @State private var selectedCarousel: Int = 0
-  @State private var showDetailView: Bool = false
+  @State private var showDetailNews = false
   @State private var currentDetailNews: String = ""
   @State private var offset: CGFloat = 0
   @State private var lastOffset: CGFloat = 0
@@ -29,17 +31,15 @@ struct HomeView: View {
     GeometryReader { _ in
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
-          HStack(spacing: 0.0) {
-            Text("Hello, Good Morning")
-              .font(.system(.headline, design: .rounded))
+          HomeGreetingTheme(greetMessage: "Testers") {
+            if self.colorScheme == .dark {
+              self.appUtilities.selectedAppearance = 1
+            } else {
+              self.appUtilities.selectedAppearance = 2
+            }
 
-            Spacer()
-
-            Button("", systemImage: "moon.fill", action: {})
-              .tint(self.colorScheme == .dark ? Color.white : Color.black)
-              .labelsHidden()
+            self.appUtilities.overrideDisplayMode()
           }
-          .padding(.horizontal, 5.0)
 
           HStack(spacing: 0.0) {
             Image(systemName: "magnifyingglass")
@@ -114,7 +114,7 @@ struct HomeView: View {
             .onTapGesture {
               withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
                 self.currentDetailNews = carousel
-                self.showDetailView = true
+                self.showDetailNews = true
               }
             }
           }
@@ -123,7 +123,7 @@ struct HomeView: View {
         }
         NavigationLink(
           destination: HomeNewsDetail(),
-          isActive: self.$showDetailView,
+          isActive: self.$showDetailNews,
           label: {}
         )
 
@@ -150,7 +150,7 @@ struct HomeView: View {
           LazyVStack(spacing: 0) {
             Button {
               withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
-                self.showDetailView = true
+                self.showDetailNews = true
               }
             }
             label: {
