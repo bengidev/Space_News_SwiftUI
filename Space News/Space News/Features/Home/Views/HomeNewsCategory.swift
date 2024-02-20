@@ -19,9 +19,9 @@ struct HomeNewsCategory: View {
   @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
-    Button(action: {
+    Button {
       self.handler?()
-    }, label: {
+    } label: {
       VStack(spacing: 8.0) {
         Text(self.menus[self.menuIndex])
           .font(.system(.headline, design: .rounded))
@@ -37,7 +37,7 @@ struct HomeNewsCategory: View {
           .frame(maxWidth: .infinity, maxHeight: 5.0)
           .opacity(self.selectedIndex == self.menuIndex ? 1 : 0)
       }
-    })
+    }
     .buttonStyle(.plain)
     .enableInjection()
   }
