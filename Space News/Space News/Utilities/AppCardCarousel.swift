@@ -48,7 +48,7 @@ struct AppCardCarousel<Content: View, Item, ID>: View where Item: RandomAccessCo
       let size = proxy.size
       let cardWidth = size.width - (self.cardPadding - self.spacing)
 
-      LazyHStack(spacing: self.spacing) {
+      HStack(spacing: self.spacing) {
         ForEach(self.items, id: self.id) { carousel in
           self.content(carousel, CGSize(width: size.width - self.cardPadding, height: size.height))
             .frame(width: size.width - self.cardPadding, height: size.height)
