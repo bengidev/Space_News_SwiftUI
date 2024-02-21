@@ -15,12 +15,13 @@ struct HomeView: View {
   @State private var tabs: [String] = ["Nature", "Animals", "Fish", "Flowers", "Cities", "Cars", "Planes"]
   @State private var selectedTab: Int = 0
   @State private var selectedCarousel: Int = 0
-  @State private var showDetailNews = false
+  @State private var showNewsDetail = false
   @State private var currentDetailNews: String = ""
   @State private var offset: CGFloat = 0
   @State private var lastOffset: CGFloat = 0
   @State private var selectedPage: Int = 1
   @State private var greetingMessage: String = GreetingTime.morning.rawValue
+  @State private var showSearchDetail = false
 
   @Namespace private var animation
 
@@ -42,19 +43,16 @@ struct HomeView: View {
             self.appUtilities.overrideDisplayMode()
           }
 
-          HStack(spacing: 0.0) {
-            Image(systemName: "magnifyingglass")
-
-            Spacer()
-
-            TextField("Find interesting news", text: self.$searchText)
+          HomeSearchNews {
+            withAnimation {
+              self.showSearchDetail.toggle()
+            }
           }
-          .padding(10.0)
-          .overlay(
-            RoundedRectangle(cornerRadius: 10.0)
-              .stroke(Color.gray, lineWidth: 1.0)
+          NavigationLink(
+            destination: HomeSearchDetail(),
+            isActive: self.$showSearchDetail,
+            label: {}
           )
-          .padding(.horizontal, 5.0)
 
           ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 30.0) {
@@ -115,7 +113,7 @@ struct HomeView: View {
             .onTapGesture {
               withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
                 self.currentDetailNews = carousel
-                self.showDetailNews = true
+                self.showNewsDetail.toggle()
               }
             }
           }
@@ -124,7 +122,7 @@ struct HomeView: View {
         }
         NavigationLink(
           destination: HomeNewsDetail(),
-          isActive: self.$showDetailNews,
+          isActive: self.$showNewsDetail,
           label: {}
         )
 
@@ -151,7 +149,7 @@ struct HomeView: View {
           LazyVStack(spacing: 0) {
             Button {
               withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
-                self.showDetailNews = true
+                self.showNewsDetail = true
               }
             }
             label: {
