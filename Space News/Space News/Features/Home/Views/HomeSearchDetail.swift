@@ -5,10 +5,23 @@
 //  Created by Bambang Tri Rahmat Doni on 21/02/24.
 //
 
+import Inject
 import SwiftUI
 
 struct HomeSearchDetail: View {
+  @Binding var searchText: String
+
+  @State private var searchExample: String = ""
+
+  @Environment(\.isSearching) private var isSearching
+
+  @ObservedObject private var injectObserver = Inject.observer
+
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    VStack {
+      Text(self.isSearching ? "Searching!" : "Not searching.")
+    }
+    .navigationTitle("Search News")
+    .enableInjection()
   }
 }
