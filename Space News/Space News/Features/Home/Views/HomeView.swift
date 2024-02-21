@@ -20,6 +20,7 @@ struct HomeView: View {
   @State private var offset: CGFloat = 0
   @State private var lastOffset: CGFloat = 0
   @State private var selectedPage: Int = 1
+  @State private var greetingMessage: String = GreetingTime.morning.rawValue
 
   @Namespace private var animation
 
@@ -31,7 +32,7 @@ struct HomeView: View {
     GeometryReader { _ in
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
-          HomeGreetingTheme(greetMessage: "Testers") {
+          HomeGreetingTheme(greetMessage: self.greetingMessage) {
             if self.colorScheme == .dark {
               self.appUtilities.selectedAppearance = 1
             } else {
@@ -234,5 +235,42 @@ struct HomeView: View {
     .background(Color.appSecondary)
     .coordinateSpace(name: "HomeViewScroll")
     .enableInjection()
+    .onAppear {
+      withAnimation(.easeInOut) {
+        self.greetingMessage = calculateGreetingTime().rawValue
+      }
+    }
+  }
+}
+
+private extension HomeView {
+  private enum GreetingTime: String, Hashable, CaseIterable {
+    case morning = "Good Morning"
+    case afternoon = "Good Afternoon"
+    case evening = "Good Evening"
+    case night = "Good Night"
+  }
+
+  private func calculateGreetingTime(from time: Date? = .now) -> GreetingTime {
+    let currentDate = time?.description ?? Date.now.description
+
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm"
+
+    let currentTime = formatter.date(from: currentDate) ?? .now
+    let morningTime = formatter.date(from: "05.01") ?? .now
+    let afternoonTime = formatter.date(from: "12:01") ?? .now
+    let eveningTime = formatter.date(from: "18:01") ?? .now
+    let nightTime = formatter.date(from: "22:01") ?? .now
+
+    if currentTime >= morningTime, currentTime < afternoonTime {
+      return .morning
+    } else if currentTime >= afternoonTime, currentTime < eveningTime {
+      return .afternoon
+    } else if currentTime >= eveningTime, currentTime < nightTime {
+      return .evening
+    } else {
+      return .night
+    }
   }
 }
