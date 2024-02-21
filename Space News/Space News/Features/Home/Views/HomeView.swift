@@ -49,7 +49,18 @@ struct HomeView: View {
             }
           }
           NavigationLink(
-            destination: HomeSearchDetail(),
+            destination: HomeSearchDetail(searchText: self.$searchText)
+              .searchable(
+                text: self.$searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Search"
+              )
+              .onSubmit(of: .search) {
+                print("isSearching was triggered now!")
+              }
+              .onChange(of: self.searchText) { _ in
+                print("isSearching was triggered!")
+              },
             isActive: self.$showSearchDetail,
             label: {}
           )
