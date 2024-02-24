@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B60296912B7A15340039B86A /* AppFlatTabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60296902B7A15340039B86A /* AppFlatTabViewItem.swift */; };
 		B60D7C712B7CBCB900567808 /* HomeNewsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */; };
+		B62FBC0F2B875C0E004D39F9 /* HomeTrendingNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62FBC0E2B875C0E004D39F9 /* HomeTrendingNews.swift */; };
 		B64080B02B84C9E200087039 /* HomeGreetingTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64080AF2B84C9E200087039 /* HomeGreetingTheme.swift */; };
 		B64080B42B84D47700087039 /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64080B32B84D47700087039 /* AppUtilities.swift */; };
 		B64080B72B84D68000087039 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64080B62B84D68000087039 /* UIApplication.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		B60296902B7A15340039B86A /* AppFlatTabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlatTabViewItem.swift; sourceTree = "<group>"; };
 		B60D7C702B7CBCB900567808 /* HomeNewsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsDetail.swift; sourceTree = "<group>"; };
+		B62FBC0E2B875C0E004D39F9 /* HomeTrendingNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrendingNews.swift; sourceTree = "<group>"; };
 		B64080AF2B84C9E200087039 /* HomeGreetingTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGreetingTheme.swift; sourceTree = "<group>"; };
 		B64080B32B84D47700087039 /* AppUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
 		B64080B62B84D68000087039 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				B64080AF2B84C9E200087039 /* HomeGreetingTheme.swift */,
 				B69F15D42B86145A009A8458 /* HomeSearchNews.swift */,
 				B69F15D62B861AE5009A8458 /* HomeSearchDetail.swift */,
+				B62FBC0E2B875C0E004D39F9 /* HomeTrendingNews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */,
 				B66A42C42B74D765004568DD /* OnboardingUtils.swift in Sources */,
 				B66A42C62B74E540004568DD /* AppButton.swift in Sources */,
+				B62FBC0F2B875C0E004D39F9 /* HomeTrendingNews.swift in Sources */,
 				B64080B02B84C9E200087039 /* HomeGreetingTheme.swift in Sources */,
 				B64DB4D52B7A20C60006660D /* ExploreView.swift in Sources */,
 				B60296912B7A15340039B86A /* AppFlatTabViewItem.swift in Sources */,
