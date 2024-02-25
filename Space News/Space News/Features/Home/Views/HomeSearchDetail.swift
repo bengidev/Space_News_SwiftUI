@@ -9,17 +9,33 @@ import Inject
 import SwiftUI
 
 struct HomeSearchDetail: View {
-  @Binding var searchText: String
-
-  @State private var searchExample: String = ""
+  @State private var searchText: String = ""
 
   @Environment(\.isSearching) private var isSearching
 
   @ObservedObject private var injectObserver = Inject.observer
-
   var body: some View {
     VStack {
-      Text(self.isSearching ? "Searching!" : "Not searching.")
+      HStack {
+        HStack {
+          Image(systemName: "magnifyingglass")
+
+          TextField("Find interesting news", text: self.$searchText) { isEditing in
+            print("TextField isEditing: ", isEditing)
+          }
+          .font(.system(.body, design: .rounded))
+
+          Spacer()
+        }
+        .padding(10.0)
+        .overlay(
+          RoundedRectangle(cornerRadius: 10.0)
+            .stroke(Color.gray, lineWidth: 1.0)
+        )
+        .contentShape(Rectangle())
+      }
+      .padding(.horizontal, 5.0)
+
     }
     .navigationTitle("Search News")
     .enableInjection()
