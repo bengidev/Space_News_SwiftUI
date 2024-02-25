@@ -15,6 +15,14 @@ struct HomeSearchDetail: View {
 
   @ObservedObject private var injectObserver = Inject.observer
 
+  private let contacts = [
+    "John",
+    "Alice",
+    "Bob",
+    "Foo",
+    "Bar"
+  ]
+
   var body: some View {
     VStack {
       HStack {
@@ -46,6 +54,13 @@ struct HomeSearchDetail: View {
       }
       .padding(.horizontal, 5.0)
 
+      List {
+        ForEach(self.contacts, id: \.self) { contact in
+          LazyVStack {
+            Text(contact)
+          }
+        }
+      }
     }
     .navigationTitle("Search News")
     .enableInjection()
