@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeSearchDetail: View {
   @State private var searchText: String = ""
+  @State private var isShowingFilter = false
 
   @Environment(\.isSearching) private var isSearching
 
@@ -43,7 +44,9 @@ struct HomeSearchDetail: View {
         )
         .contentShape(Rectangle())
 
-        Button {} label: {
+        Button {
+          withAnimation { self.isShowingFilter.toggle() }
+        } label: {
           Image(systemName: "slider.horizontal.3")
             .font(.title3)
             .padding(10.0)
@@ -60,7 +63,11 @@ struct HomeSearchDetail: View {
             Text(contact)
           }
         }
+        .listRowSeparator(.hidden)
+        .listRowInsets(.init(top: 5.0, leading: 5.0, bottom: 5.0, trailing: 5.0))
+        .listRowBackground(Color.appSecondary)
       }
+      .listBackgroundColor(.appSecondary)
     }
     .navigationTitle("Search News")
     .enableInjection()
