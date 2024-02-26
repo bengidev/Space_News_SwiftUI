@@ -46,14 +46,9 @@ struct HomeView: View {
 
           HomeSearchNews {
             withAnimation {
-              self.showSearchDetail.toggle()
+              self.showSearchDetail = true
             }
           }
-          NavigationLink(
-            destination: HomeSearchDetail(),
-            isActive: self.$showSearchDetail,
-            label: {}
-          )
 
           ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 30.0) {
@@ -115,6 +110,13 @@ struct HomeView: View {
 
           return Color.clear
         }
+      }
+      .background {
+        NavigationLink(
+          destination: HomeSearchDetail(),
+          isActive: self.$showSearchDetail,
+          label: {}
+        )
       }
       .clipped()
       .background(Color.appSecondary)
