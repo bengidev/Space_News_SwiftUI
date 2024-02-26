@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DashboardView: View {
   @State private var selectedTabItem: AppTabViewCategory = .home
-  @State private var isShowingTabBar: Bool = true
+  @State private var isShowingTabBar = true
 
   @Namespace private var animation
 
@@ -95,6 +95,7 @@ struct DashboardView: View {
         self.isShowingTabBar = false
       }
     }
+    .navigationViewStyle(.stack)
     .enableInjection()
   }
 }
