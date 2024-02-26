@@ -29,6 +29,7 @@
 		B69F15D52B86145A009A8458 /* HomeSearchNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F15D42B86145A009A8458 /* HomeSearchNews.swift */; };
 		B69F15D72B861AE5009A8458 /* HomeSearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F15D62B861AE5009A8458 /* HomeSearchDetail.swift */; };
 		B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */; };
+		B6B17FCA2B8B7E9300C4027F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B17FC92B8B7E9200C4027F /* UICollectionView.swift */; };
 		B6D1D9A02B80AE99006302FA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1D99F2B80AE99006302FA /* DashboardView.swift */; };
 		B6D9B14C2B74B8B700B1EAF6 /* Space_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */; };
 		B6D9B1502B74B8B900B1EAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D9B14F2B74B8B900B1EAF6 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		B69F15D42B86145A009A8458 /* HomeSearchNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchNews.swift; sourceTree = "<group>"; };
 		B69F15D62B861AE5009A8458 /* HomeSearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchDetail.swift; sourceTree = "<group>"; };
 		B6ABF5D92B74CFA7008AA872 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B6B17FC92B8B7E9200C4027F /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		B6D1D99F2B80AE99006302FA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		B6D9B1482B74B8B700B1EAF6 /* Space News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D9B14B2B74B8B700B1EAF6 /* Space_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space_NewsApp.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B64080B62B84D68000087039 /* UIApplication.swift */,
+				B6B17FC92B8B7E9200C4027F /* UICollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				B64DB4D52B7A20C60006660D /* ExploreView.swift in Sources */,
 				B60296912B7A15340039B86A /* AppFlatTabViewItem.swift in Sources */,
 				B60D7C712B7CBCB900567808 /* HomeNewsDetail.swift in Sources */,
+				B6B17FCA2B8B7E9300C4027F /* UICollectionView.swift in Sources */,
 				B6ABF5DA2B74CFA7008AA872 /* OnboardingView.swift in Sources */,
 				B6F8AECC2B78B7ED00B03F16 /* HomeView.swift in Sources */,
 				B68585D92B8A095300E616D6 /* HomeHighlightNews.swift in Sources */,

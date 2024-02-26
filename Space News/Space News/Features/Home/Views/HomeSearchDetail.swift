@@ -58,15 +58,58 @@ struct HomeSearchDetail: View {
       .padding(.horizontal, 5.0)
 
       List {
-        ForEach(self.contacts, id: \.self) { contact in
+        ForEach(self.contacts, id: \.self) { _ in
           LazyVStack {
-            Text(contact)
+            Button {
+              withAnimation(.interactiveSpring(
+                response: 0.5,
+                dampingFraction: 0.7,
+                blendDuration: 0.7
+              )) {}
+            }
+            label: {
+              VStack(alignment: .center, spacing: 0) {
+                Text(
+                  "Nequere porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitNequere porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+                )
+                .font(.system(.subheadline, design: .serif))
+                .padding(5.0)
+
+                Image(systemName: "pencil")
+                  .resizable()
+                  .frame(height: 120.0)
+                  .frame(maxWidth: .infinity)
+                  .background(Color.red)
+                  .clipShape(RoundedRectangle(cornerRadius: 10.0))
+
+                HStack(spacing: 0) {
+                  Text("1h")
+
+                  Text("|")
+                    .padding(.horizontal, 5.0)
+
+                  Text("CNBC News")
+
+                  Spacer()
+                }
+                .font(.system(.footnote, design: .rounded))
+                .foregroundStyle(Color.gray)
+                .padding(.vertical, 5.0)
+                .padding(.horizontal, 10.0)
+              }
+              .frame(height: 200.0)
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .background(Color.gray.opacity(0.3))
+              .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            }
+            .buttonStyle(.plain)
           }
         }
-        .listRowSeparator(.hidden)
-        .listRowInsets(.init(top: 5.0, leading: 5.0, bottom: 5.0, trailing: 5.0))
-        .listRowBackground(Color.appSecondary)
       }
+      .listStyle(.plain)
+      .listRowInsets(.init())
+      .listRowSeparator(.hidden)
+      .listRowBackground(Color.appSecondary)
       .listBackgroundColor(.appSecondary)
     }
     .navigationTitle("Search News")
