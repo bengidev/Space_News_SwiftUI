@@ -12,8 +12,6 @@ struct HomeSearchDetail: View {
   @State private var searchText: String = ""
   @State private var isShowingFilter = false
 
-  @Environment(\.isSearching) private var isSearching
-
   @ObservedObject private var injectObserver = Inject.observer
 
   private let contacts = [
@@ -111,6 +109,21 @@ struct HomeSearchDetail: View {
       .listRowSeparator(.hidden)
       .listRowBackground(Color.appSecondary)
       .listBackgroundColor(.appSecondary)
+    }
+    .adaptiveSheet(
+      isPresented: self.$isShowingFilter,
+      detents: [.medium(), .large()],
+      smallestUndimmedDetentIdentifier: .medium
+    ) {
+      ZStack {
+        Color.red
+
+        Text("Hello, World!").frame(maxWidth: .infinity, maxHeight: .infinity)
+          .onTapGesture {
+            self.isShowingFilter.toggle()
+          }
+      }
+      .ignoresSafeArea()
     }
     .navigationTitle("Search News")
     .enableInjection()
