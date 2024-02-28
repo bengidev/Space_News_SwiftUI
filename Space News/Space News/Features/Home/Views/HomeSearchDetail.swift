@@ -90,6 +90,8 @@ struct HomeSearchDetail: View {
                   Text("CNBC News")
 
                   Spacer()
+
+                  Image(systemName: "star.fill")
                 }
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(Color.gray)
@@ -103,9 +105,9 @@ struct HomeSearchDetail: View {
             }
             .buttonStyle(.plain)
             .contextMenu {
-                Button("Action 1") {}
-                Button("Action 2") {}
-                Button("Action 3") {}
+              Button("Action 1") {}
+              Button("Action 2") {}
+              Button("Action 3") {}
             }
           }
           .padding(.vertical, 5.0)
