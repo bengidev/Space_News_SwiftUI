@@ -10,7 +10,8 @@ import SwiftUI
 
 struct HomeSearchDetail: View {
   @State private var searchText: String = ""
-  @State private var isShowingFilter = false
+  @State private var isShowFilter = false
+  @State private var isDisableSearchNewsScroll = false
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -43,7 +44,7 @@ struct HomeSearchDetail: View {
         .contentShape(Rectangle())
 
         Button {
-          withAnimation { self.isShowingFilter.toggle() }
+          withAnimation { self.isShowFilter.toggle() }
         } label: {
           Image(systemName: "slider.horizontal.3")
             .font(.title3)
@@ -106,9 +107,14 @@ struct HomeSearchDetail: View {
           .padding(.horizontal, 10.0)
         }
       }
+      .disabled(self.isDisableSearchNewsScroll)
+      .onTapGesture {
+        self.isShowFilter = false
+        self.isDisableSearchNewsScroll = false
+      }
     }
     .adaptiveSheet(
-      isPresented: self.$isShowingFilter,
+      isPresented: self.$isShowFilter,
       detents: [.medium(), .large()],
       smallestUndimmedDetentIdentifier: .medium
     ) {
@@ -117,11 +123,19 @@ struct HomeSearchDetail: View {
 
         Text("Hello, World!").frame(maxWidth: .infinity, maxHeight: .infinity)
           .onTapGesture {
-            self.isShowingFilter.toggle()
+            self.isShowFilter.toggle()
           }
       }
       .ignoresSafeArea()
+      .onAppear {
+        self.isDisableSearchNewsScroll = true
+      }
+      .onDisappear {
+        self.isDisableSearchNewsScroll = false
+      }
     }
+    .animation(.easeInOut, value: self.isShowFilter)
+    .animation(.easeInOut, value: self.isDisableSearchNewsScroll)
     .navigationTitle("Search News")
     .enableInjection()
   }
