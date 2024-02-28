@@ -55,7 +55,7 @@ struct HomeSearchDetail: View {
       }
       .padding(.horizontal, 5.0)
 
-      List {
+      ScrollView(.vertical, showsIndicators: false) {
         ForEach(self.contacts, id: \.self) { _ in
           LazyVStack {
             Button {
@@ -102,13 +102,10 @@ struct HomeSearchDetail: View {
             }
             .buttonStyle(.plain)
           }
+          .padding(.vertical, 5.0)
+          .padding(.horizontal, 10.0)
         }
       }
-      .listStyle(.plain)
-      .listRowInsets(.init())
-      .listRowSeparator(.hidden)
-      .listRowBackground(Color.appSecondary)
-      .listBackgroundColor(.appSecondary)
     }
     .adaptiveSheet(
       isPresented: self.$isShowingFilter,
