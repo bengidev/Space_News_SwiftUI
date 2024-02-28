@@ -5,4 +5,28 @@
 //  Created by Bambang Tri Rahmat Doni on 28/02/24.
 //
 
-import Foundation
+import SwiftUI
+
+// MARK: AppResponsiveView will return the properties of the view
+
+struct AppResponsiveView<Content: View>: View {
+  // Returning properties
+  var content: (Properties) -> Content
+
+  var body: some View {
+    GeometryReader { proxy in
+      let size: CGSize = proxy.size
+      let isLandscape: Bool = (size.width > size.height)
+      let isIPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
+
+      self.content(Properties(isLandscape: isLandscape, isIPad: isIPad, size: size))
+        .frame(width: size.width, height: size.height, alignment: .center)
+    }
+  }
+}
+
+struct Properties {
+  var isLandscape: Bool
+  var isIPad: Bool
+  var size: CGSize
+}
