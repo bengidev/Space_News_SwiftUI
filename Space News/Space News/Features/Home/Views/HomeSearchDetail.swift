@@ -102,6 +102,11 @@ struct HomeSearchDetail: View {
               .clipShape(RoundedRectangle(cornerRadius: 10.0))
             }
             .buttonStyle(.plain)
+            .contextMenu {
+                Button("Action 1") {}
+                Button("Action 2") {}
+                Button("Action 3") {}
+            }
           }
           .padding(.vertical, 5.0)
           .padding(.horizontal, 10.0)
