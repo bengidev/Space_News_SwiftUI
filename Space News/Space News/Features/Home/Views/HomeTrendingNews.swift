@@ -5,12 +5,16 @@
 //  Created by Bambang Tri Rahmat Doni on 22/02/24.
 //
 
+import Inject
 import SwiftUI
 
 struct HomeTrendingNews: View {
+  var prop: Properties
   var carousels: [String]
   @Binding var selectedCarousel: Int
-  @Binding var isShowNewsDetail: Bool
+  @Binding var isShowingNewsDetail: Bool
+
+  @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
     VStack {
@@ -52,13 +56,21 @@ struct HomeTrendingNews: View {
           }
           .padding()
           .position(x: 140.0, y: 150.0)
+
+          Button {} label: {
+            Image(systemName: "star.fill")
+              .font(.headline)
+              .foregroundStyle(Color.red)
+              .position(x: self.prop.size.width * 0.65, y: self.prop.size.height * 0.03)
+          }
+          .buttonStyle(.plain)
         }
         .background(Color.gray.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
         .contentShape(Rectangle())
         .onTapGesture {
           withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
-            self.isShowNewsDetail.toggle()
+            self.isShowingNewsDetail.toggle()
           }
         }
       }
@@ -67,7 +79,7 @@ struct HomeTrendingNews: View {
     }
     NavigationLink(
       destination: HomeNewsDetail(),
-      isActive: self.$isShowNewsDetail,
+      isActive: self.$isShowingNewsDetail,
       label: {}
     )
 
@@ -83,5 +95,6 @@ struct HomeTrendingNews: View {
       .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
       value: self.selectedCarousel
     )
+    .enableInjection()
   }
 }
