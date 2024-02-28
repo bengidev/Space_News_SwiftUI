@@ -31,7 +31,7 @@ struct HomeView: View {
   @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
-    GeometryReader { _ in
+    AppResponsiveView { prop in
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
           HomeGreetingTheme(greetMessage: self.greetingMessage) {
@@ -65,6 +65,7 @@ struct HomeView: View {
           .padding(.top, 10.0)
 
           HomeTrendingNews(
+            prop: prop,
             carousels: self.carousels,
             selectedCarousel: self.$selectedCarousel,
             isShowingNewsDetail: self.$isShowingNewsDetail
