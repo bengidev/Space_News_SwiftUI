@@ -76,59 +76,63 @@ struct HomeView: View {
           AppPagination(currentPage: self.$selectedPage, totalPages: 50)
             .padding(.bottom, 60.0)
         }
-      }
-      .overlay {
-        GeometryReader { geometry -> Color in
-          let minY = geometry.frame(in: .named("HomeViewScroll")).minY
-          let limitOffset: CGFloat = 400.0
-          let durationOffset: CGFloat = 35.0
+        .background {
+          GeometryReader { proxy -> Color in
+            let minY = proxy.frame(in: .named("HomeViewScroll")).minY
+            let limitOffset: CGFloat = 400.0
+            let durationOffset: CGFloat = 35.0
 
-          DispatchQueue.main.async {
-            if minY < self.offset {
-              if self.offset < limitOffset, -minY > (self.lastOffset + durationOffset) {
+            DispatchQueue.main.async {
+              print("Proxy: ", minY)
+                print("Offset: ", offset)
+                print("Last Offset: ", lastOffset)
+
+              if minY < self.offset {
+                if self.offset < limitOffset, -minY > (self.lastOffset + durationOffset) {
+                  withAnimation(.easeInOut.speed(1.5)) {
+                    NotificationCenter.default.post(
+                      name: .init("HIDE_TAB_BAR"),
+                      object: nil,
+                      userInfo: nil
+                    )
+                  }
+
+                  self.lastOffset = -self.offset
+                }
+              }
+
+              if minY > self.offset, -minY < (self.lastOffset - durationOffset) {
                 withAnimation(.easeInOut.speed(1.5)) {
-                  NotificationCenter.default.post(
-                    name: .init("HIDE_TAB_BAR"),
-                    object: nil,
-                    userInfo: nil
-                  )
+                  NotificationCenter.default.post(name: .init("SHOW_TAB_BAR"), object: nil, userInfo: nil)
                 }
 
                 self.lastOffset = -self.offset
               }
+
+              self.offset = minY
             }
 
-            if minY > self.offset, -minY < (self.lastOffset - durationOffset) {
-              withAnimation(.easeInOut.speed(1.5)) {
-                NotificationCenter.default.post(name: .init("SHOW_TAB_BAR"), object: nil, userInfo: nil)
-              }
-
-              self.lastOffset = -self.offset
-            }
-
-            self.offset = minY
+            return Color.clear
           }
-
-          return Color.clear
         }
-      }
-      .background {
-        NavigationLink(
-          destination: HomeSearchDetail(),
-          isActive: self.$showSearchDetail,
-          label: {}
-        )
       }
       .clipped()
       .background(Color.appSecondary)
-      .coordinateSpace(name: "HomeViewScroll")
-      .enableInjection()
       .onAppear {
         withAnimation(.easeInOut) {
           self.greetingMessage = calculateGreetingTime().rawValue
         }
       }
     }
+    .background {
+      NavigationLink(
+        destination: HomeSearchDetail(),
+        isActive: self.$showSearchDetail,
+        label: {}
+      )
+    }
+    .coordinateSpace(name: "HomeViewScroll")
+    .enableInjection()
   }
 }
 
