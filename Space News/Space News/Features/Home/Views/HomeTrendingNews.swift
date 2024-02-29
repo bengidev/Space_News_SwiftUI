@@ -55,7 +55,7 @@ struct HomeTrendingNews: View {
             .padding(.vertical, 5.0)
           }
           .padding()
-          .position(x: 140.0, y: 150.0)
+          .position(x: self.prop.size.width * 0.35, y: self.prop.size.height * 0.2)
 
           Button {} label: {
             Image(systemName: "star.fill")
@@ -74,8 +74,8 @@ struct HomeTrendingNews: View {
           }
         }
       }
+      .frame(height: self.prop.size.height * 0.26)
       .padding(.horizontal, 10.0)
-      .frame(height: 200.0)
     }
     NavigationLink(
       destination: HomeNewsDetail(),
