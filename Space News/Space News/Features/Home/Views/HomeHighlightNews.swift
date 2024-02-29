@@ -5,10 +5,13 @@
 //  Created by Bambang Tri Rahmat Doni on 24/02/24.
 //
 
+import Inject
 import SwiftUI
 
 struct HomeHighlightNews: View {
   @Binding var isShowingNewsDetail: Bool
+
+  @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
     Text("Highlights")
@@ -18,15 +21,13 @@ struct HomeHighlightNews: View {
       .padding(.top, 5.0)
 
     ForEach(0 ..< 10, id: \.self) { _ in
-      LazyVStack(spacing: 0) {
+      LazyVStack {
         Button {
           withAnimation(.interactiveSpring(
             response: 0.5,
             dampingFraction: 0.7,
             blendDuration: 0.7
-          )) {
-            self.isShowingNewsDetail.toggle()
-          }
+          )) {}
         }
         label: {
           VStack(alignment: .center, spacing: 0) {
@@ -52,6 +53,8 @@ struct HomeHighlightNews: View {
               Text("CNBC News")
 
               Spacer()
+
+              Image(systemName: "star.fill")
             }
             .font(.system(.footnote, design: .rounded))
             .foregroundStyle(Color.gray)
@@ -62,12 +65,17 @@ struct HomeHighlightNews: View {
           .frame(maxWidth: .infinity, alignment: .leading)
           .background(Color.gray.opacity(0.3))
           .clipShape(RoundedRectangle(cornerRadius: 10.0))
-          .padding(.vertical, 3.0)
-          .padding(.horizontal, 5.0)
         }
         .buttonStyle(.plain)
+        .contextMenu {
+          Button("Action 1") {}
+          Button("Action 2") {}
+          Button("Action 3") {}
+        }
       }
-      .padding(.horizontal, 5.0)
+      .padding(.vertical, 5.0)
+      .padding(.horizontal, 10.0)
     }
+    .enableInjection()
   }
 }
