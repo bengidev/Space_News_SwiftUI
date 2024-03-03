@@ -12,6 +12,7 @@ struct HomeSearchDetail: View {
   @State private var searchText: String = ""
   @State private var isShowFilter = false
   @State private var isDisableSearchNewsScroll = false
+  @State private var selectedDateRange: String = ""
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -22,6 +23,8 @@ struct HomeSearchDetail: View {
     "Foo",
     "Bar"
   ]
+
+  private let dateRanges: [String] = ["today", "week", "month"]
 
   var body: some View {
     VStack {
@@ -138,9 +141,36 @@ struct HomeSearchDetail: View {
           }
           .padding(.vertical, 5.0)
 
-          VStack {
+          VStack(alignment: .leading) {
             Text("Date Range")
               .font(.system(.headline, design: .rounded))
+
+            ForEach(self.dateRanges, id: \.self) { date in
+              Button {
+                self.selectedDateRange = date
+                print("Selected Date Range: ", self.selectedDateRange)
+              } label: {
+                HStack {
+                  Text(date)
+                    .font(.system(.subheadline, design: .default))
+
+                  Spacer()
+
+                  ZStack {
+                    Circle()
+                      .fill(self.selectedDateRange == date ? Color.red : Color.gray.opacity(0.2))
+                      .frame(width: 18.0, height: 18.0)
+
+                    if self.selectedDateRange == date {
+                      Circle()
+                        .stroke(Color.red, lineWidth: 5.0)
+                        .frame(width: 25.0, height: 25.0)
+                    }
+                  }
+                }
+              }
+              .buttonStyle(.plain)
+            }
           }
           .padding(.vertical, 5.0)
 
@@ -162,6 +192,7 @@ struct HomeSearchDetail: View {
     }
     .animation(.easeInOut, value: self.isShowFilter)
     .animation(.easeInOut, value: self.isDisableSearchNewsScroll)
+    .animation(.easeInOut, value: self.selectedDateRange)
     .navigationTitle("Search News")
     .enableInjection()
   }
