@@ -83,10 +83,6 @@ struct HomeView: View {
             let durationOffset: CGFloat = 35.0
 
             DispatchQueue.main.async {
-              print("Proxy: ", minY)
-                print("Offset: ", offset)
-                print("Last Offset: ", lastOffset)
-
               if minY < self.offset {
                 if self.offset < limitOffset, -minY > (self.lastOffset + durationOffset) {
                   withAnimation(.easeInOut.speed(1.5)) {
