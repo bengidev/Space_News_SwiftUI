@@ -123,17 +123,36 @@ struct HomeSearchDetail: View {
     .adaptiveSheet(
       isPresented: self.$isShowFilter,
       detents: [.medium(), .large()],
-      smallestUndimmedDetentIdentifier: .medium
+      smallestUndimmedDetentIdentifier: .medium,
+      prefersScrollingExpandsWhenScrolledToEdge: false
     ) {
-      ZStack {
-        Color.red
+      ScrollView(.vertical, showsIndicators: false) {
+        VStack(alignment: .leading) {
+          VStack(alignment: .leading) {
+            Text("Filters")
+              .font(.system(.headline, design: .rounded))
 
-        Text("Hello, World!").frame(maxWidth: .infinity, maxHeight: .infinity)
-          .onTapGesture {
-            self.isShowFilter.toggle()
+            Text("Works only for news")
+              .font(.system(.subheadline, design: .default))
+              .foregroundStyle(Color.gray)
           }
+          .padding(.vertical, 5.0)
+
+          VStack {
+            Text("Date Range")
+              .font(.system(.headline, design: .rounded))
+          }
+          .padding(.vertical, 5.0)
+
+          VStack {
+            Text("Category (3)")
+              .font(.system(.headline, design: .rounded))
+          }
+          .padding(.vertical, 5.0)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .padding()
       }
-      .ignoresSafeArea()
       .onAppear {
         self.isDisableSearchNewsScroll = true
       }
