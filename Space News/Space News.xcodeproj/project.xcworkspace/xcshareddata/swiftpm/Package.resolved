@@ -8,6 +8,15 @@
         "revision" : "e91205e809f7bd7f6fc3f26fc0b5c1fbfaac20c6",
         "version" : "1.3.0"
       }
+    },
+    {
+      "identity" : "partialsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AndreaMiotto/PartialSheet",
+      "state" : {
+        "revision" : "6c61890976181274ea7baf6a4c297418346db799",
+        "version" : "3.1.1"
+      }
     }
   ],
   "version" : 2
