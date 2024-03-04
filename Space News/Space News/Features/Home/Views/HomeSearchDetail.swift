@@ -6,12 +6,14 @@
 //
 
 import Inject
+import PartialSheet
 import SwiftUI
 
 struct HomeSearchDetail: View {
+  var prop: Properties
+
   @State private var searchText: String = ""
   @State private var isShowFilter = false
-  @State private var isDisableSearchNewsScroll = false
   @State private var selectedDateRange: String = ""
 
   @ObservedObject private var injectObserver = Inject.observer
@@ -117,25 +119,18 @@ struct HomeSearchDetail: View {
           .padding(.horizontal, 10.0)
         }
       }
-      .disabled(self.isDisableSearchNewsScroll)
       .onTapGesture {
         self.isShowFilter = false
-        self.isDisableSearchNewsScroll = false
       }
     }
-    .adaptiveSheet(
-      isPresented: self.$isShowFilter,
-      detents: [.medium(), .large()],
-      smallestUndimmedDetentIdentifier: .medium,
-      prefersScrollingExpandsWhenScrolledToEdge: false
-    ) {
+    .partialSheet(isPresented: self.$isShowFilter) {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading) {
           VStack(alignment: .leading) {
             Text("Filters")
               .font(.system(.headline, design: .rounded))
 
-            Text("Works only for news")
+            Text(self.isShowFilter ? "Tester" : "Works only for news")
               .font(.system(.subheadline, design: .default))
               .foregroundStyle(Color.gray)
           }
@@ -144,33 +139,6 @@ struct HomeSearchDetail: View {
           VStack(alignment: .leading) {
             Text("Date Range")
               .font(.system(.headline, design: .rounded))
-
-            ForEach(self.dateRanges, id: \.self) { date in
-              Button {
-                self.selectedDateRange = date
-                print("Selected Date Range: ", self.selectedDateRange)
-              } label: {
-                HStack {
-                  Text(date)
-                    .font(.system(.subheadline, design: .default))
-
-                  Spacer()
-
-                  ZStack {
-                    Circle()
-                      .fill(self.selectedDateRange == date ? Color.red : Color.gray.opacity(0.2))
-                      .frame(width: 18.0, height: 18.0)
-
-                    if self.selectedDateRange == date {
-                      Circle()
-                        .stroke(Color.red, lineWidth: 5.0)
-                        .frame(width: 25.0, height: 25.0)
-                    }
-                  }
-                }
-              }
-              .buttonStyle(.plain)
-            }
           }
           .padding(.vertical, 5.0)
 
@@ -180,18 +148,11 @@ struct HomeSearchDetail: View {
           }
           .padding(.vertical, 5.0)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .padding()
       }
-      .onAppear {
-        self.isDisableSearchNewsScroll = true
-      }
-      .onDisappear {
-        self.isDisableSearchNewsScroll = false
-      }
+      .padding()
+      .frame(maxWidth: .infinity, maxHeight: self.prop.size.height * 0.5, alignment: .leading)
     }
     .animation(.easeInOut, value: self.isShowFilter)
-    .animation(.easeInOut, value: self.isDisableSearchNewsScroll)
     .animation(.easeInOut, value: self.selectedDateRange)
     .navigationTitle("Search News")
     .enableInjection()
