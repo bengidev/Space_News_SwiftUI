@@ -112,20 +112,20 @@ struct HomeView: View {
           }
         }
       }
-      .clipped()
-      .background(Color.appSecondary)
       .onAppear {
         withAnimation(.easeInOut) {
           self.greetingMessage = calculateGreetingTime().rawValue
         }
       }
-    }
-    .background {
-      NavigationLink(
-        destination: HomeSearchDetail(),
-        isActive: self.$showSearchDetail,
-        label: {}
-      )
+      .clipped()
+      .background(Color.appSecondary)
+      .background {
+        NavigationLink(
+          destination: HomeSearchDetail(prop: prop),
+          isActive: self.$showSearchDetail,
+          label: {}
+        )
+      }
     }
     .coordinateSpace(name: "HomeViewScroll")
     .enableInjection()
