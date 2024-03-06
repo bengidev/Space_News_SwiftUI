@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DashboardView: View {
   @State private var selectedTabItem: AppTabViewCategory = .home
-  @State private var isShowingTabBar = true
+  @State private var isShowedTabBar = true
 
   @Namespace private var animation
 
@@ -70,32 +70,32 @@ struct DashboardView: View {
             }
           }
         }
-        .offset(y: self.isShowingTabBar ? 0 : 150.0)
+        .offset(y: self.isShowedTabBar ? 0 : 150.0)
         .background {
-          if self.isShowingTabBar {
+          if self.isShowedTabBar {
             AppTabViewCorner(corners: [.topLeft, .topRight], radius: 20.0)
               .fill(Color.appPrimary)
               .ignoresSafeArea()
           }
         }
-        .animation(
-          .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
-          value: self.selectedTabItem
-        )
-        .animation(
-          .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
-          value: self.isShowingTabBar
-        )
       }
       .ignoresSafeArea(.keyboard, edges: .bottom)
+      .navigationViewStyle(.stack)
+      .animation(
+        .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
+        value: self.selectedTabItem
+      )
+      .animation(
+        .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
+        value: self.isShowedTabBar
+      )
       .onReceive(NotificationCenter.default.publisher(for: .init("SHOW_TAB_BAR"))) { _ in
-        self.isShowingTabBar = true
+        self.isShowedTabBar = true
       }
       .onReceive(NotificationCenter.default.publisher(for: .init("HIDE_TAB_BAR"))) { _ in
-        self.isShowingTabBar = false
+        self.isShowedTabBar = false
       }
     }
-    .navigationViewStyle(.stack)
     .enableInjection()
   }
 }
