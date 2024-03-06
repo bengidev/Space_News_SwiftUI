@@ -126,7 +126,7 @@ struct HomeSearchDetail: View {
     .partialSheet(isPresented: self.$isShowFilter) {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading) {
-          VStack(alignment: .leading) {
+          VStack {
             Text("Filters")
               .font(.system(.headline, design: .rounded))
 
@@ -136,7 +136,7 @@ struct HomeSearchDetail: View {
           }
           .padding(.vertical, 5.0)
 
-          VStack(alignment: .leading) {
+          VStack {
             Text("Date Range")
               .font(.system(.headline, design: .rounded))
           }
