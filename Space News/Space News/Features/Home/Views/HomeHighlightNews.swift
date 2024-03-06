@@ -9,7 +9,8 @@ import Inject
 import SwiftUI
 
 struct HomeHighlightNews: View {
-  @Binding var isShowingNewsDetail: Bool
+  var prop: Properties
+  @Binding var isShowedNewsDetail: Bool
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -39,7 +40,7 @@ struct HomeHighlightNews: View {
 
             Image(systemName: "pencil")
               .resizable()
-              .frame(height: 120.0)
+              .frame(height: self.prop.size.height * 0.15)
               .frame(maxWidth: .infinity)
               .background(Color.red)
               .clipShape(RoundedRectangle(cornerRadius: 10.0))
@@ -61,7 +62,7 @@ struct HomeHighlightNews: View {
             .padding(.vertical, 5.0)
             .padding(.horizontal, 10.0)
           }
-          .frame(height: 200.0)
+          .frame(height: self.prop.size.height * 0.26)
           .frame(maxWidth: .infinity, alignment: .leading)
           .background(Color.gray.opacity(0.3))
           .clipShape(RoundedRectangle(cornerRadius: 10.0))
