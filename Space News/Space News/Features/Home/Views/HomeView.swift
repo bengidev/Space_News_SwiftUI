@@ -16,7 +16,7 @@ struct HomeView: View {
   @State private var selectedTab: Int = 0
   @State private var carousels: [String] = ["Nature", "Animals", "Fish", "Flowers", "Cities", "Cars", "Planes"]
   @State private var selectedCarousel: Int = 0
-  @State private var isShowingNewsDetail = false
+  @State private var isShowedNewsDetail = false
   @State private var currentDetailNews: String = ""
   @State private var offset: CGFloat = 0
   @State private var lastOffset: CGFloat = 0
@@ -68,10 +68,10 @@ struct HomeView: View {
             prop: prop,
             carousels: self.carousels,
             selectedCarousel: self.$selectedCarousel,
-            isShowingNewsDetail: self.$isShowingNewsDetail
+            isShowedNewsDetail: self.$isShowedNewsDetail
           )
 
-          HomeHighlightNews(isShowingNewsDetail: self.$isShowingNewsDetail)
+          HomeHighlightNews(prop: prop, isShowedNewsDetail: self.$isShowedNewsDetail)
 
           AppPagination(currentPage: self.$selectedPage, totalPages: 50)
             .padding(.bottom, 60.0)
