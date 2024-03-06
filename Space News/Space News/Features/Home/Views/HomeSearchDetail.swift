@@ -81,7 +81,7 @@ struct HomeSearchDetail: View {
 
                 Image(systemName: "pencil")
                   .resizable()
-                  .frame(height: 120.0)
+                  .frame(height: self.prop.size.height * 0.15)
                   .frame(maxWidth: .infinity)
                   .background(Color.red)
                   .clipShape(RoundedRectangle(cornerRadius: 10.0))
@@ -103,7 +103,7 @@ struct HomeSearchDetail: View {
                 .padding(.vertical, 5.0)
                 .padding(.horizontal, 10.0)
               }
-              .frame(height: 200.0)
+              .frame(height: self.prop.size.height * 0.26)
               .frame(maxWidth: .infinity, alignment: .leading)
               .background(Color.gray.opacity(0.3))
               .clipShape(RoundedRectangle(cornerRadius: 10.0))
