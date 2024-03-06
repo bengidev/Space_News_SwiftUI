@@ -12,7 +12,7 @@ struct HomeTrendingNews: View {
   var prop: Properties
   var carousels: [String]
   @Binding var selectedCarousel: Int
-  @Binding var isShowingNewsDetail: Bool
+  @Binding var isShowedNewsDetail: Bool
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -70,18 +70,13 @@ struct HomeTrendingNews: View {
         .contentShape(Rectangle())
         .onTapGesture {
           withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
-            self.isShowingNewsDetail.toggle()
+            self.isShowedNewsDetail.toggle()
           }
         }
       }
       .frame(height: self.prop.size.height * 0.26)
       .padding(.horizontal, 10.0)
     }
-    NavigationLink(
-      destination: HomeNewsDetail(),
-      isActive: self.$isShowingNewsDetail,
-      label: {}
-    )
 
     HStack {
       ForEach(0 ..< self.carousels.count, id: \.self) { carousel in
@@ -91,6 +86,13 @@ struct HomeTrendingNews: View {
       }
     }
     .padding(.top, 12.0)
+    .background {
+      NavigationLink(
+        destination: HomeNewsDetail(),
+        isActive: self.$isShowedNewsDetail,
+        label: {}
+      )
+    }
     .animation(
       .interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.7),
       value: self.selectedCarousel
