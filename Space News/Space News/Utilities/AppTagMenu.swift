@@ -22,7 +22,7 @@ struct AppTagMenu: View {
       Text("Filter \nMenus")
         .font(.system(.title, design: .rounded).bold())
         .frame(maxWidth: .infinity, alignment: .leading)
-
+        
       TextField("Apple", text: self.$text)
         .font(.title3)
         .padding(.vertical, 12.0)
@@ -36,6 +36,14 @@ struct AppTagMenu: View {
         .padding(.vertical, 12.0)
 
       Button {
+        self.addTag(tags: self.tags, text: self.text, fontSize: 16.0, maxLimit: 150) { alert, tag in
+          if alert {
+            self.isShowedAlert.toggle()
+          } else {
+            self.tags.append(tag)
+            self.text.removeAll()
+          }
+        }
       } label: {
         Text("Add Tag")
           .font(.system(.subheadline, design: .default).weight(.semibold))
@@ -53,6 +61,35 @@ struct AppTagMenu: View {
     .ignoresSafeArea(.keyboard)
     .animation(.easeInOut, value: self.text)
     .enableInjection()
+  }
+
+  private func addTag(
+    tags: [Tag],
+    text: String,
+    fontSize: CGFloat,
+    maxLimit: Int,
+    completion: @escaping (Bool, Tag) -> Void
+  ) {
+    let font = UIFont.systemFont(ofSize: fontSize)
+    let attributes = [NSAttributedString.Key.font: font]
+    let size = (text as NSString).size(withAttributes: attributes)
+    let tag = Tag(text: text, size: size.width)
+
+    if (self.getSize(tags: tags) + text.count) < maxLimit {
+      completion(false, tag)
+    } else {
+      completion(true, tag)
+    }
+  }
+
+  private func getSize(tags: [Tag]) -> Int {
+    var count = 0
+
+    for tag in tags {
+      count += tag.text.count
+    }
+
+    return count
   }
 }
 
