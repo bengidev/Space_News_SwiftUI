@@ -12,6 +12,8 @@ struct AppTagMenu: View {
   var prop: Properties
 
   @State private var text: String = ""
+  @State private var tags: [Tag] = []
+  @State private var isShowedAlert = false
 
   @ObservedObject private var injectObserver = Inject.observer
 
@@ -52,5 +54,10 @@ struct AppTagMenu: View {
     .animation(.easeInOut, value: self.text)
     .enableInjection()
   }
+}
 
+struct Tag: Hashable, Identifiable {
+  let id = UUID()
+  var text: String
+  var size: CGFloat = 0
 }
