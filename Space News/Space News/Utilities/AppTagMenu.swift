@@ -22,7 +22,11 @@ struct AppTagMenu: View {
       Text("Filter \nMenus")
         .font(.system(.title, design: .rounded).bold())
         .frame(maxWidth: .infinity, alignment: .leading)
-        
+
+      TagMenu(prop: self.prop, maxLimit: 150, tags: self.$tags)
+        .frame(height: 280.0)
+        .padding(.vertical, 20.0)
+
       TextField("Apple", text: self.$text)
         .font(.title3)
         .padding(.vertical, 12.0)
@@ -90,6 +94,39 @@ struct AppTagMenu: View {
     }
 
     return count
+  }
+}
+
+struct TagMenu: View {
+  var prop: Properties
+  var maxLimit: Int
+  @Binding var tags: [Tag]
+
+  var title: String = "Add some tags"
+  var fontSize: CGFloat = 16.0
+
+  @Namespace var animation
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 15.0) {
+      Text(self.title)
+        .font(.system(.callout, design: .default))
+
+      ScrollView(.vertical, showsIndicators: false) {
+        VStack(alignment: .leading, spacing: 10.0) {
+          Text("Placeholder")
+        }
+        .frame(width: self.prop.size.width - 50.0, alignment: .leading)
+        .padding(.vertical)
+        .padding(.bottom, 20.0)
+      }
+      .frame(maxWidth: .infinity)
+      .background {
+        RoundedRectangle(cornerRadius: 8.0)
+          .strokeBorder(Color.gray.opacity(0.5), lineWidth: 1.0)
+      }
+    }
+    .animation(.easeInOut, value: self.tags)
   }
 }
 
