@@ -64,6 +64,13 @@ struct AppTagMenu: View {
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     .ignoresSafeArea(.keyboard)
     .animation(.easeInOut, value: self.text)
+    .alert(isPresented: self.$isShowedAlert) {
+      Alert(
+        title: Text("Error"),
+        message: Text("Tag limit was exceeded! Try to delete some tags."),
+        dismissButton: .destructive(Text("OK"), action: {})
+      )
+    }
     .enableInjection()
   }
 
