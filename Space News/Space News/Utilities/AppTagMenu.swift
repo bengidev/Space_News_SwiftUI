@@ -114,7 +114,13 @@ struct TagMenu: View {
 
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading, spacing: 10.0) {
-          Text("Placeholder")
+          ForEach(self.getRows(), id: \.self) { rows in
+            HStack(spacing: 6.0) {
+              ForEach(rows) { row in
+                self.buildRowView(tag: row)
+              }
+            }
+          }
         }
         .frame(width: self.prop.size.width - 50.0, alignment: .leading)
         .padding(.vertical)
@@ -125,8 +131,81 @@ struct TagMenu: View {
         RoundedRectangle(cornerRadius: 8.0)
           .strokeBorder(Color.gray.opacity(0.5), lineWidth: 1.0)
       }
+      .overlay(alignment: .bottomTrailing) {
+        Text("\(self.getSize(tags: self.tags))/\(self.maxLimit)")
+          .font(.system(.footnote, design: .rounded).weight(.semibold))
+          .padding(12.0)
+      }
     }
     .animation(.easeInOut, value: self.tags)
+  }
+
+  @ViewBuilder
+  private func buildRowView(tag: Tag) -> some View {
+    Text(tag.text)
+      .font(.system(size: self.fontSize))
+      .lineLimit(1)
+      .padding(.horizontal, 14.0)
+      .padding(.vertical, 8.0)
+      .background {
+        Capsule()
+          .fill(Color.gray.opacity(0.3))
+      }
+      .contentShape(Capsule())
+      .contextMenu {
+        Button("Delete") {
+          self.tags.remove(at: self.getIndex(tag: tag))
+        }
+      }
+      .matchedGeometryEffect(id: tag.id, in: self.animation)
+  }
+
+  private func getIndex(tag: Tag) -> Int {
+    let index = self.tags.firstIndex { currentTag in
+      tag.id == currentTag.id
+    } ?? 0
+
+    return index
+  }
+
+  private func getRows() -> [[Tag]] {
+    var rows: [[Tag]] = []
+    var currentRow: [Tag] = []
+    var totalWidth: CGFloat = 0
+
+    let screenWidth: CGFloat = self.prop.size.width - 50.0
+
+    for tag in self.tags {
+      let tagWidth: CGFloat = tag.size + 20.0
+
+      totalWidth += tagWidth
+
+      if totalWidth > screenWidth {
+        totalWidth = (!currentRow.isEmpty || rows.isEmpty ? tagWidth : 0)
+
+        rows.append(currentRow)
+        currentRow.removeAll()
+        currentRow.append(tag)
+      } else {
+        currentRow.append(tag)
+      }
+    }
+    if !currentRow.isEmpty {
+      rows.append(currentRow)
+      currentRow.removeAll()
+    }
+
+    return rows
+  }
+
+  private func getSize(tags: [Tag]) -> Int {
+    var count = 0
+
+    for tag in tags {
+      count += tag.text.count
+    }
+
+    return count
   }
 }
 
