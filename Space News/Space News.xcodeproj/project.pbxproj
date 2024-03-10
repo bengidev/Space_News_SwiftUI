@@ -43,7 +43,6 @@
 		B6D9B16C2B74B8BA00B1EAF6 /* Space_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B16B2B74B8BA00B1EAF6 /* Space_NewsUITests.swift */; };
 		B6D9B16E2B74B8BA00B1EAF6 /* Space_NewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9B16D2B74B8BA00B1EAF6 /* Space_NewsUITestsLaunchTests.swift */; };
 		B6E1EBF82B7B7CC2008A69DD /* HomeNewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1EBF72B7B7CC2008A69DD /* HomeNewsCategory.swift */; };
-		B6F6B3FB2B962C6C00249EAC /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = B6F6B3FA2B962C6C00249EAC /* PartialSheet */; };
 		B6F8AEC62B78B7B300B03F16 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8AEC52B78B7B300B03F16 /* InitialView.swift */; };
 		B6F8AECC2B78B7ED00B03F16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F8AECB2B78B7ED00B03F16 /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -113,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6F6B3FB2B962C6C00249EAC /* PartialSheet in Frameworks */,
 				B69C5A662B74C3FB00059D36 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,7 +527,6 @@
 			name = "Space News";
 			packageProductDependencies = (
 				B69C5A652B74C3FB00059D36 /* Inject */,
-				B6F6B3FA2B962C6C00249EAC /* PartialSheet */,
 			);
 			productName = "Space News";
 			productReference = B6D9B1482B74B8B700B1EAF6 /* Space News.app */;
@@ -605,7 +602,6 @@
 			mainGroup = B6D9B13F2B74B8B700B1EAF6;
 			packageReferences = (
 				B69C5A642B74C3FB00059D36 /* XCRemoteSwiftPackageReference "Inject" */,
-				B6F6B3F92B962C6C00249EAC /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = B6D9B1492B74B8B700B1EAF6 /* Products */;
 			projectDirPath = "";
@@ -1099,14 +1095,6 @@
 				minimumVersion = 1.3.0;
 			};
 		};
-		B6F6B3F92B962C6C00249EAC /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1114,11 +1102,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B69C5A642B74C3FB00059D36 /* XCRemoteSwiftPackageReference "Inject" */;
 			productName = Inject;
-		};
-		B6F6B3FA2B962C6C00249EAC /* PartialSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6F6B3F92B962C6C00249EAC /* XCRemoteSwiftPackageReference "PartialSheet" */;
-			productName = PartialSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 
