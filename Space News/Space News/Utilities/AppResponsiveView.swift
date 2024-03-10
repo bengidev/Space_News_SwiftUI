@@ -19,14 +19,15 @@ struct AppResponsiveView<Content: View>: View {
       let isLandscape: Bool = (size.width > size.height)
       let isIPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
 
-      self.content(Properties(isLandscape: isLandscape, isIPad: isIPad, size: size))
+      self.content(Properties(proxy: proxy, size: size, isLandscape: isLandscape, isIPad: isIPad))
         .frame(width: size.width, height: size.height, alignment: .center)
     }
   }
 }
 
 struct Properties {
+  var proxy: GeometryProxy
+  var size: CGSize
   var isLandscape: Bool
   var isIPad: Bool
-  var size: CGSize
 }
