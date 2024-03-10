@@ -6,7 +6,6 @@
 //
 
 import Inject
-import PartialSheet
 import SwiftUI
 
 struct InitialView: View {
@@ -18,7 +17,6 @@ struct InitialView: View {
 
   var body: some View {
     DashboardView()
-      .attachPartialSheetToRoot()
       .enableInjection()
   }
 }
