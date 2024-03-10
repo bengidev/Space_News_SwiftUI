@@ -47,6 +47,8 @@ struct AppTagMenu: View {
             self.tags.append(tag)
             self.text.removeAll()
           }
+
+          print("Tags: ", self.tags)
         }
       } label: {
         Text("Add Tag")
@@ -180,7 +182,7 @@ struct TagMenu: View {
     var currentRow: [Tag] = []
     var totalWidth: CGFloat = 0
 
-    let screenWidth: CGFloat = self.prop.size.width - 50.0
+    let screenWidth: CGFloat = self.prop.size.width - 100
 
     for tag in self.tags {
       let tagWidth: CGFloat = tag.size + 20.0
