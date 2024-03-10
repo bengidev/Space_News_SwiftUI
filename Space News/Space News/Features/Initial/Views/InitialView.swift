@@ -17,11 +17,9 @@ struct InitialView: View {
   @ObservedObject private var injectObserver = Inject.observer
 
   var body: some View {
-    AppResponsiveView { prop in
-      AppTagMenu(prop: prop)
-    }
-    .attachPartialSheetToRoot()
-    .enableInjection()
+    DashboardView()
+      .attachPartialSheetToRoot()
+      .enableInjection()
   }
 }
 
