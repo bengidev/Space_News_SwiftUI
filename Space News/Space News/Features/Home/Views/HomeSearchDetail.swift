@@ -134,6 +134,7 @@ struct HomeSearchDetail: View {
         }
       }
       .disabled(self.isShowedFilter)
+      .onTapGesture { self.isShowedFilter.toggle() }
 
       VStack {
         Spacer()
