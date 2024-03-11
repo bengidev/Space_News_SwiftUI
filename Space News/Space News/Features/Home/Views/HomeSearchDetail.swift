@@ -136,9 +136,11 @@ struct HomeSearchDetail: View {
         Spacer()
 
         VStack {
-          Capsule()
-            .fill(Color.secondary.opacity(0.5))
-            .frame(width: 35.0, height: 5.0)
+          Button {} label: {
+            Capsule()
+              .fill(Color.secondary.opacity(0.5))
+              .frame(width: 35.0, height: 5.0)
+          }
 
           ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
