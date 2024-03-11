@@ -12,7 +12,7 @@ struct HomeSearchDetail: View {
   var prop: Properties
 
   @State private var searchText: String = ""
-  @State private var isShowFilter = false
+  @State private var isShowedFilter = false
   @State private var selectedDateRange: String = ""
   @State private var tags: [Tag] = [
     Tag(text: "Business", size: 64.75), Tag(text: "Politics", size: 51.9765625),
@@ -56,7 +56,7 @@ struct HomeSearchDetail: View {
           .contentShape(Rectangle())
 
           Button {
-            withAnimation { self.isShowFilter.toggle() }
+            withAnimation { self.isShowedFilter.toggle() }
           } label: {
             Image(systemName: "slider.horizontal.3")
               .font(.title3)
@@ -127,9 +127,10 @@ struct HomeSearchDetail: View {
           }
         }
         .onTapGesture {
-          self.isShowFilter = false
+          self.isShowedFilter = false
         }
       }
+      .disabled(self.isShowedFilter)
 
       VStack {
         Spacer()
@@ -148,7 +149,7 @@ struct HomeSearchDetail: View {
               .frame(maxWidth: .infinity, alignment: .leading)
               .background(Color.red)
 
-              Text(self.isShowFilter ? "Tester" : "Works only for news")
+              Text(self.isShowedFilter ? "Tester" : "Works only for news")
                 .font(.system(.subheadline, design: .default))
                 .foregroundStyle(Color.gray)
                 .padding(.vertical, 5.0)
@@ -166,11 +167,14 @@ struct HomeSearchDetail: View {
         }
         .frame(maxWidth: .infinity, maxHeight: self.prop.size.height * 0.3)
         .padding()
+        .padding(.bottom, self.prop.proxy.safeAreaInsets.bottom + 15.0)
         .background(Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
+        .offset(y: self.prop.proxy.safeAreaInsets.bottom + 15.0)
       }
+      .onAppear { self.isShowedFilter.toggle() }
     }
-    .animation(.easeInOut, value: self.isShowFilter)
+    .animation(.easeInOut, value: self.isShowedFilter)
     .animation(.easeInOut, value: self.selectedDateRange)
     .navigationTitle("Search News")
     .enableInjection()
