@@ -11,6 +11,8 @@ import SwiftUI
 struct HomeSearchDetail: View {
   var prop: Properties
 
+  @State private var currHeight: CGFloat = 400.0
+  @State private var prevDragTranslation: CGSize = .zero
   @State private var searchText: String = ""
   @State private var isShowedFilter = false
   @State private var selectedDateRange: String = ""
@@ -23,6 +25,9 @@ struct HomeSearchDetail: View {
   ]
 
   @ObservedObject private var injectObserver = Inject.observer
+
+  private let minHeight: CGFloat = 400.0
+  private let maxHeight: CGFloat = 700.0
 
   private let contacts = [
     "John",
@@ -56,7 +61,8 @@ struct HomeSearchDetail: View {
           .contentShape(Rectangle())
 
           Button {
-            withAnimation { self.isShowedFilter.toggle() }
+            self.isShowedFilter.toggle()
+            self.currHeight = self.minHeight
           } label: {
             Image(systemName: "slider.horizontal.3")
               .font(.title3)
@@ -127,17 +133,16 @@ struct HomeSearchDetail: View {
           }
         }
       }
-      .disabled(isShowedFilter)
+      .disabled(self.isShowedFilter)
 
       VStack {
         Spacer()
 
         VStack {
-            Button { isShowedFilter.toggle() } label: {
-            Capsule()
-              .fill(Color.secondary.opacity(0.5))
-              .frame(width: 35.0, height: 5.0)
-          }
+          Capsule()
+            .fill(Color.secondary.opacity(0.5))
+            .frame(width: 35.0, height: 5.0)
+            .gesture(self.dragGesture)
 
           ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -164,17 +169,40 @@ struct HomeSearchDetail: View {
             }
           }
         }
-        .frame(maxWidth: .infinity, maxHeight: self.prop.size.height * 0.3)
+        .frame(maxWidth: .infinity, maxHeight: self.currHeight)
         .padding()
         .padding(.bottom, self.prop.proxy.safeAreaInsets.bottom + 15.0)
         .background(Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
-        .offset(y: isShowedFilter ? self.prop.proxy.safeAreaInsets.bottom + 15.0 : prop.size.height)
+        .offset(y: self.isShowedFilter ? self.prop.proxy.safeAreaInsets.bottom + 15.0 : self.prop.size.height)
       }
     }
+    .animation(.easeInOut, value: self.currHeight)
     .animation(.easeInOut, value: self.isShowedFilter)
     .animation(.easeInOut, value: self.selectedDateRange)
     .navigationTitle("Search News")
     .enableInjection()
+  }
+
+  private var dragGesture: some Gesture {
+    DragGesture(minimumDistance: 0, coordinateSpace: .global)
+      .onChanged { value in
+        let dragAmount = value.translation.height - self.prevDragTranslation.height
+
+        if self.currHeight > self.maxHeight || self.currHeight < self.minHeight {
+          self.currHeight -= dragAmount
+          print("True Height: ", self.currHeight)
+        } else {
+          self.currHeight -= dragAmount
+          print("False Height: ", self.currHeight)
+        }
+        if self.currHeight <= 250.0 {
+          self.isShowedFilter = false
+        }
+        self.prevDragTranslation = value.translation
+      }
+      .onEnded { _ in
+        self.prevDragTranslation = .zero
+      }
   }
 }
