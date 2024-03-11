@@ -126,17 +126,14 @@ struct HomeSearchDetail: View {
             .padding(.horizontal, 10.0)
           }
         }
-        .onTapGesture {
-          self.isShowedFilter = false
-        }
       }
-      .disabled(self.isShowedFilter)
+      .disabled(isShowedFilter)
 
       VStack {
         Spacer()
 
         VStack {
-          Button {} label: {
+            Button { isShowedFilter.toggle() } label: {
             Capsule()
               .fill(Color.secondary.opacity(0.5))
               .frame(width: 35.0, height: 5.0)
@@ -172,9 +169,8 @@ struct HomeSearchDetail: View {
         .padding(.bottom, self.prop.proxy.safeAreaInsets.bottom + 15.0)
         .background(Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
-        .offset(y: self.prop.proxy.safeAreaInsets.bottom + 15.0)
+        .offset(y: isShowedFilter ? self.prop.proxy.safeAreaInsets.bottom + 15.0 : prop.size.height)
       }
-      .onAppear { self.isShowedFilter.toggle() }
     }
     .animation(.easeInOut, value: self.isShowedFilter)
     .animation(.easeInOut, value: self.selectedDateRange)
