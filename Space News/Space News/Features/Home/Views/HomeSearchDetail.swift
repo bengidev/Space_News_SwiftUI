@@ -135,6 +135,10 @@ struct HomeSearchDetail: View {
         Spacer()
 
         VStack {
+          Capsule()
+            .fill(Color.secondary.opacity(0.5))
+            .frame(width: 35.0, height: 5.0)
+
           ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
               VStack {
@@ -161,10 +165,10 @@ struct HomeSearchDetail: View {
           }
         }
         .frame(maxWidth: .infinity, maxHeight: self.prop.size.height * 0.3)
+        .padding()
         .background(Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
       }
-
     }
     .animation(.easeInOut, value: self.isShowFilter)
     .animation(.easeInOut, value: self.selectedDateRange)
