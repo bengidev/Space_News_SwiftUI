@@ -171,7 +171,7 @@ struct HomeSearchDetail: View {
         .frame(maxWidth: .infinity, maxHeight: self.currHeight)
         .padding()
         .padding(.bottom, self.prop.proxy.safeAreaInsets.bottom + 15.0)
-        .background(Color.gray)
+        .background(Color.init(uiColor: UIColor.systemGray6))
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
         .offset(y: self.isShowedFilter ? self.prop.proxy.safeAreaInsets.bottom + 15.0 : self.prop.size.height)
       }
