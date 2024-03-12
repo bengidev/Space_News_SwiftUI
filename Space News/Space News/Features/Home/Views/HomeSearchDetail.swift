@@ -189,17 +189,16 @@ struct HomeSearchDetail: View {
     DragGesture(minimumDistance: 0, coordinateSpace: .global)
       .onChanged { value in
         let dragAmount = value.translation.height - self.prevDragTranslation.height
+        self.currHeight -= dragAmount
 
-        if self.currHeight > self.maxHeight || self.currHeight < self.minHeight {
-          self.currHeight -= dragAmount
-          print("True Height: ", self.currHeight)
-        } else {
-          self.currHeight -= dragAmount
-          print("False Height: ", self.currHeight)
-        }
-        if self.currHeight <= 250.0 {
+        if dragAmount < 0, self.currHeight < self.maxHeight {
+          self.currHeight = self.maxHeight
+        } else if dragAmount > 0, self.currHeight > self.minHeight {
+          self.currHeight = self.minHeight
+        } else if dragAmount > 0, self.currHeight < self.minHeight - (dragAmount + 10.0) {
           self.isShowedFilter = false
         }
+
         self.prevDragTranslation = value.translation
       }
       .onEnded { _ in
