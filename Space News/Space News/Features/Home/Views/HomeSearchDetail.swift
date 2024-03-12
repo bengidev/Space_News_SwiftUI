@@ -174,6 +174,7 @@ struct HomeSearchDetail: View {
         .background(Color.init(uiColor: UIColor.systemGray6))
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
         .offset(y: self.isShowedFilter ? self.prop.proxy.safeAreaInsets.bottom + 15.0 : self.prop.size.height)
+        .shadow(radius: 5.0)
       }
     }
     .animation(.easeInOut, value: self.currHeight)
