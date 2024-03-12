@@ -152,7 +152,6 @@ struct HomeSearchDetail: View {
                   .font(.system(.headline, design: .rounded))
               }
               .frame(maxWidth: .infinity, alignment: .leading)
-              .background(Color.red)
 
               Text(self.isShowedFilter ? "Tester" : "Works only for news")
                 .font(.system(.subheadline, design: .default))
@@ -166,7 +165,6 @@ struct HomeSearchDetail: View {
               Text("Category (3)")
                 .font(.system(.headline, design: .rounded))
                 .padding(.vertical, 5.0)
-                .background(Color.red)
             }
           }
         }
