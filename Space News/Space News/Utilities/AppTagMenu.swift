@@ -12,7 +12,14 @@ struct AppTagMenu: View {
   var prop: Properties
 
   @State private var text: String = ""
-  @State private var tags: [Tag] = []
+  @State private var tags: [Tag] = [
+    Tag(text: "Business", size: 64.75), Tag(text: "Politics", size: 51.9765625),
+    Tag(text: "Lifestyle", size: 60.7890625), Tag(text: "Art", size: 21.90625), Tag(text: "Health", size: 47.2421875),
+    Tag(text: "Tech", size: 34.8359375), Tag(text: "Travel", size: 43.25), Tag(text: "Fashion", size: 55.78125),
+    Tag(text: "Sports", size: 47.8203125), Tag(text: "Food", size: 36.640625), Tag(text: "World", size: 42.5625),
+    Tag(text: "Science", size: 57.484375)
+  ]
+
   @State private var isShowedAlert = false
 
   @ObservedObject private var injectObserver = Inject.observer
@@ -118,9 +125,6 @@ struct TagMenu: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 15.0) {
-      Text(self.title)
-        .font(.system(.callout, design: .default))
-
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading, spacing: 10.0) {
           ForEach(self.getRows(), id: \.self) { rows in
@@ -132,19 +136,8 @@ struct TagMenu: View {
           }
         }
         .frame(width: self.prop.size.width - 50.0, alignment: .leading)
-        .padding(.vertical)
-        .padding(.bottom, 20.0)
       }
       .frame(maxWidth: .infinity)
-      .background {
-        RoundedRectangle(cornerRadius: 8.0)
-          .strokeBorder(Color.gray.opacity(0.5), lineWidth: 1.0)
-      }
-      .overlay(alignment: .bottomTrailing) {
-        Text("\(self.getSize(tags: self.tags))/\(self.maxLimit)")
-          .font(.system(.footnote, design: .rounded).weight(.semibold))
-          .padding(12.0)
-      }
     }
     .animation(.easeInOut, value: self.tags)
   }
