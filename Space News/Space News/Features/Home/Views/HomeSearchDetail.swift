@@ -166,8 +166,10 @@ struct HomeSearchDetail: View {
                 .font(.system(.headline, design: .rounded))
                 .padding(.vertical, 5.0)
 
-              TagMenu(prop: self.prop, maxLimit: 150, tags: self.$tags)
-                .frame(height: 280.0)
+              TagMenu(prop: self.prop, maxLimit: 150, tags: self.$tags) { tag in
+                print("Touch Tag: ", tag)
+              }
+              .frame(height: 280.0)
             }
           }
         }
