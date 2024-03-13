@@ -117,6 +117,7 @@ struct TagMenu: View {
   var prop: Properties
   var maxLimit: Int
   @Binding var tags: [Tag]
+  var onTapHandler: ((Tag) -> Void)?
 
   var title: String = "Add some tags"
   var fontSize: CGFloat = 16.0
@@ -130,7 +131,9 @@ struct TagMenu: View {
           ForEach(self.getRows(), id: \.self) { rows in
             HStack(spacing: 6.0) {
               ForEach(rows) { row in
-                self.buildRowView(tag: row)
+                self.buildRowView(tag: row) { tag in
+                  self.onTapHandler?(tag)
+                }
               }
             }
           }
@@ -143,23 +146,26 @@ struct TagMenu: View {
   }
 
   @ViewBuilder
-  private func buildRowView(tag: Tag) -> some View {
-    Text(tag.text)
-      .font(.system(size: self.fontSize))
-      .lineLimit(1)
-      .padding(.horizontal, 14.0)
-      .padding(.vertical, 8.0)
-      .background {
-        Capsule()
-          .fill(Color.gray.opacity(0.3))
-      }
-      .contentShape(Capsule())
-      .contextMenu {
-        Button("Delete") {
-          self.tags.remove(at: self.getIndex(tag: tag))
+  private func buildRowView(tag: Tag, onTapHandler: ((Tag) -> Void)?) -> some View {
+    Button { onTapHandler?(tag) } label: {
+      Text(tag.text)
+        .font(.system(size: self.fontSize))
+        .lineLimit(1)
+        .padding(.horizontal, 14.0)
+        .padding(.vertical, 8.0)
+        .background {
+          Capsule()
+            .fill(Color.gray.opacity(0.3))
         }
-      }
-      .matchedGeometryEffect(id: tag.id, in: self.animation)
+        .contentShape(Capsule())
+        .contextMenu {
+          Button("Delete") {
+            self.tags.remove(at: self.getIndex(tag: tag))
+          }
+        }
+        .matchedGeometryEffect(id: tag.id, in: self.animation)
+    }
+    .buttonStyle(.plain)
   }
 
   private func getIndex(tag: Tag) -> Int {
