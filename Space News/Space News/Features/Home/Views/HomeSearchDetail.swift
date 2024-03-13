@@ -165,13 +165,16 @@ struct HomeSearchDetail: View {
               Text("Category (3)")
                 .font(.system(.headline, design: .rounded))
                 .padding(.vertical, 5.0)
+
+              TagMenu(prop: self.prop, maxLimit: 150, tags: self.$tags)
+                .frame(height: 280.0)
             }
           }
         }
         .frame(maxWidth: .infinity, maxHeight: self.currHeight)
         .padding()
         .padding(.bottom, self.prop.proxy.safeAreaInsets.bottom + 15.0)
-        .background(Color.init(uiColor: UIColor.systemGray6))
+        .background(Color(uiColor: UIColor.systemGray6))
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
         .offset(y: self.isShowedFilter ? self.prop.proxy.safeAreaInsets.bottom + 15.0 : self.prop.size.height)
         .shadow(radius: 5.0)
