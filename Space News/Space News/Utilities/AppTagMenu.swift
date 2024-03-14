@@ -119,7 +119,6 @@ struct TagMenu: View {
   @Binding var tags: [Tag]
   var onTapHandler: ((Tag) -> Void)?
 
-  @State var selectedTag: Tag = .init(text: "Test", size: 20.0)
   var title: String = "Add some tags"
   var fontSize: CGFloat = 16.0
 
@@ -148,7 +147,7 @@ struct TagMenu: View {
   }
 
   @ViewBuilder
-  private func buildRowView(selectedTag: Tag, tag: Tag, onTapHandler: ((Tag) -> Void)?) -> some View {
+  private func buildRowView(tag: Tag, onTapHandler: ((Tag) -> Void)?) -> some View {
     Button { onTapHandler?(tag) } label: {
       Text(tag.text)
         .font(.system(size: self.fontSize))
@@ -157,7 +156,7 @@ struct TagMenu: View {
         .padding(.vertical, 8.0)
         .background {
           Capsule()
-            .fill(selectedTag == tag ? Color.red.opacity(0.3) : Color.gray.opacity(0.3))
+            .fill(tag.isSelected ? Color.red : Color.gray.opacity(0.5))
         }
         .contentShape(Capsule())
         .contextMenu {
