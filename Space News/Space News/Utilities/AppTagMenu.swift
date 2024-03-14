@@ -223,4 +223,5 @@ struct Tag: Hashable, Identifiable {
   let id = UUID()
   var text: String
   var size: CGFloat = 0
+  var isSelected = false
 }
