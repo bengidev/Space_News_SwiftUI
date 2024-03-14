@@ -130,9 +130,11 @@ struct TagMenu: View {
         VStack(alignment: .leading, spacing: 10.0) {
           ForEach(self.getRows(), id: \.self) { rows in
             HStack(spacing: 6.0) {
-              ForEach(rows) { row in
-                self.buildRowView(selectedTag: self.selectedTag, tag: row) { tag in
-                  self.selectedTag = tag
+              ForEach(rows, id: \.self) { row in
+                self.buildRowView(tag: row) { tag in
+                  let changeIndex = self.tags.firstIndex { $0 == tag } ?? 0
+                  self.tags[changeIndex].isSelected.toggle()
+
                   self.onTapHandler?(tag)
                 }
               }
