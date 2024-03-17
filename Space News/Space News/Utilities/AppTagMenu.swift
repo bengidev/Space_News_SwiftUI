@@ -116,9 +116,10 @@ struct AppTagMenu: View {
 struct TagMenu: View {
   var prop: Properties
   @Binding var tags: [Tag]
+  var fontStyle: Font.TextStyle = .subheadline
+  var fontDesign: Font.Design = .default
+  var fontWeight: Font.Weight = .regular
   var onTapHandler: ((Tag) -> Void)?
-
-  var fontSize: CGFloat = 16.0
 
   @Namespace var animation
 
@@ -150,7 +151,7 @@ struct TagMenu: View {
   private func buildRowView(tag: Tag, onTapHandler: ((Tag) -> Void)?) -> some View {
     Button { onTapHandler?(tag) } label: {
       Text(tag.text)
-        .font(.system(size: self.fontSize))
+        .font(.system(self.fontStyle, design: self.fontDesign).weight(self.fontWeight))
         .lineLimit(1)
         .padding(.horizontal, 14.0)
         .padding(.vertical, 8.0)
