@@ -30,7 +30,7 @@ struct AppTagMenu: View {
         .font(.system(.title, design: .rounded).bold())
         .frame(maxWidth: .infinity, alignment: .leading)
 
-      TagMenu(prop: self.prop, maxLimit: 150, tags: self.$tags)
+      TagMenu(prop: self.prop, tags: self.$tags)
         .frame(height: 280.0)
         .padding(.vertical, 20.0)
 
@@ -115,11 +115,9 @@ struct AppTagMenu: View {
 
 struct TagMenu: View {
   var prop: Properties
-  var maxLimit: Int
   @Binding var tags: [Tag]
   var onTapHandler: ((Tag) -> Void)?
 
-  var title: String = "Add some tags"
   var fontSize: CGFloat = 16.0
 
   @Namespace var animation
