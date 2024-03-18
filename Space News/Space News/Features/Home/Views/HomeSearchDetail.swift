@@ -16,6 +16,7 @@ struct HomeSearchDetail: View {
   @State private var searchText: String = ""
   @State private var isShowedFilter = false
   @State private var selectedDateRange: String = ""
+  @State private var selectedTags: [Tag] = []
   @State private var tags: [Tag] = [
     Tag(text: "Business", size: 64.75), Tag(text: "Politics", size: 51.9765625),
     Tag(text: "Lifestyle", size: 60.7890625), Tag(text: "Art", size: 21.90625), Tag(text: "Health", size: 47.2421875),
@@ -166,8 +167,8 @@ struct HomeSearchDetail: View {
                 .font(.system(.headline, design: .rounded))
                 .padding(.vertical, 5.0)
 
-              AppTagMenu(prop: self.prop, tags: self.$tags) { tag in
-                print("Touch Tag: ", tag)
+              AppTagMenu(prop: self.prop, tags: self.$tags, selectedTags: self.$selectedTags) { _ in
+                print("Selected Tags: ", self.selectedTags)
               }
               .frame(height: 280.0)
             }
