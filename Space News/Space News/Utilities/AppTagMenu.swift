@@ -18,6 +18,8 @@ struct AppTagMenu: View {
 
   @Namespace var animation
 
+  @ObservedObject private var injectObserver = Inject.observer
+
   var body: some View {
     VStack(alignment: .leading, spacing: 15.0) {
       ScrollView(.vertical, showsIndicators: false) {
@@ -40,6 +42,7 @@ struct AppTagMenu: View {
       .frame(maxWidth: .infinity)
     }
     .animation(.easeInOut, value: self.tags)
+    .enableInjection()
   }
 
   @ViewBuilder
