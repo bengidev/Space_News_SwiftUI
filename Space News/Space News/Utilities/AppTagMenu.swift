@@ -11,6 +11,7 @@ import SwiftUI
 struct AppTagMenu: View {
   var prop: Properties
   @Binding var tags: [Tag]
+  @Binding var selectedTags: [Tag]
   var fontStyle: Font.TextStyle = .subheadline
   var fontDesign: Font.Design = .default
   var fontWeight: Font.Weight = .regular
@@ -30,6 +31,9 @@ struct AppTagMenu: View {
                 self.buildRowView(tag: row) { tag in
                   let changeIndex = self.tags.firstIndex { $0 == tag } ?? 0
                   self.tags[changeIndex].isSelected.toggle()
+
+                  let tempSelectedTags = self.tags.filter(\.isSelected)
+                  self.selectedTags = tempSelectedTags
 
                   self.onTapHandler?(tag)
                 }
