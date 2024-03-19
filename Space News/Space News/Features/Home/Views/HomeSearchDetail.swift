@@ -15,7 +15,7 @@ struct HomeSearchDetail: View {
   @State private var prevDragTranslation: CGSize = .zero
   @State private var searchText: String = ""
   @State private var isShowedFilter = false
-  @State private var selectedDateRange: String = ""
+  @State private var selectedDateRange: String = "today"
   @State private var selectedTags: [Tag] = []
   @State private var tags: [Tag] = [
     Tag(text: "Business", size: 64.75), Tag(text: "Politics", size: 51.9765625),
@@ -164,7 +164,9 @@ struct HomeSearchDetail: View {
                 .padding(.vertical, 5.0)
 
               ForEach(self.dateRanges, id: \.self) { date in
-                Button {} label: {
+                Button {
+                  self.selectedDateRange = date
+                } label: {
                   HStack {
                     Text(date)
                       .font(.system(.subheadline, design: .default))
@@ -173,8 +175,14 @@ struct HomeSearchDetail: View {
 
                     ZStack {
                       Circle()
-                        .stroke(Color.black.opacity(0.5), lineWidth: 3.0)
-                        .frame(width: 15.0, height: 15.0)
+                        .fill(self.selectedDateRange == date ? Color.black : Color.black.opacity(0.2))
+                        .frame(width: 10.0, height: 10.0)
+
+                      if self.selectedDateRange == date {
+                        Circle()
+                          .stroke(Color.black.opacity(0.5), lineWidth: 2.0)
+                          .frame(width: 15.0, height: 15.0)
+                      }
                     }
                     .padding(.horizontal, 5.0)
                   }
