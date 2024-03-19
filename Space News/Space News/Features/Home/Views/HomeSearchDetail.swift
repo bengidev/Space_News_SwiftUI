@@ -163,6 +163,25 @@ struct HomeSearchDetail: View {
                 .font(.system(.headline, design: .rounded))
                 .padding(.vertical, 5.0)
 
+              ForEach(self.dateRanges, id: \.self) { date in
+                Button {} label: {
+                  HStack {
+                    Text(date)
+                      .font(.system(.subheadline, design: .default))
+
+                    Spacer()
+
+                    ZStack {
+                      Circle()
+                        .stroke(Color.black.opacity(0.5), lineWidth: 3.0)
+                        .frame(width: 15.0, height: 15.0)
+                    }
+                    .padding(.horizontal, 5.0)
+                  }
+                }
+                .buttonStyle(.plain)
+              }
+
               Text("Category (3)")
                 .font(.system(.headline, design: .rounded))
                 .padding(.vertical, 5.0)
